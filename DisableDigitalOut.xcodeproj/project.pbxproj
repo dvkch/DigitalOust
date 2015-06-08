@@ -1,0 +1,416 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F8062AA31B25B6B90060BB01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8062AA21B25B6B90060BB01 /* AppDelegate.m */; };
+		F8062AA51B25B6B90060BB01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8062AA41B25B6B90060BB01 /* main.m */; };
+		F8062AA71B25B6B90060BB01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8062AA61B25B6B90060BB01 /* Images.xcassets */; };
+		F8062AAA1B25B6B90060BB01 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8062AA81B25B6B90060BB01 /* MainMenu.xib */; };
+		F8062AB61B25B6B90060BB01 /* DisableDigitalOutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8062AB51B25B6B90060BB01 /* DisableDigitalOutTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F8062AB01B25B6B90060BB01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8062A941B25B6B90060BB01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8062A9B1B25B6B90060BB01;
+			remoteInfo = DisableDigitalOut;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F8062A9C1B25B6B90060BB01 /* DisableDigitalOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisableDigitalOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8062AA01B25B6B90060BB01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8062AA11B25B6B90060BB01 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F8062AA21B25B6B90060BB01 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F8062AA41B25B6B90060BB01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F8062AA61B25B6B90060BB01 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F8062AA91B25B6B90060BB01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F8062AAF1B25B6B90060BB01 /* DisableDigitalOutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DisableDigitalOutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8062AB41B25B6B90060BB01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8062AB51B25B6B90060BB01 /* DisableDigitalOutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisableDigitalOutTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8062A991B25B6B90060BB01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8062AAC1B25B6B90060BB01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F8062A931B25B6B90060BB01 = {
+			isa = PBXGroup;
+			children = (
+				F8062A9E1B25B6B90060BB01 /* DisableDigitalOut */,
+				F8062AB21B25B6B90060BB01 /* DisableDigitalOutTests */,
+				F8062A9D1B25B6B90060BB01 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F8062A9D1B25B6B90060BB01 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8062A9C1B25B6B90060BB01 /* DisableDigitalOut.app */,
+				F8062AAF1B25B6B90060BB01 /* DisableDigitalOutTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8062A9E1B25B6B90060BB01 /* DisableDigitalOut */ = {
+			isa = PBXGroup;
+			children = (
+				F8062AA11B25B6B90060BB01 /* AppDelegate.h */,
+				F8062AA21B25B6B90060BB01 /* AppDelegate.m */,
+				F8062AA61B25B6B90060BB01 /* Images.xcassets */,
+				F8062AA81B25B6B90060BB01 /* MainMenu.xib */,
+				F8062A9F1B25B6B90060BB01 /* Supporting Files */,
+			);
+			path = DisableDigitalOut;
+			sourceTree = "<group>";
+		};
+		F8062A9F1B25B6B90060BB01 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8062AA01B25B6B90060BB01 /* Info.plist */,
+				F8062AA41B25B6B90060BB01 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8062AB21B25B6B90060BB01 /* DisableDigitalOutTests */ = {
+			isa = PBXGroup;
+			children = (
+				F8062AB51B25B6B90060BB01 /* DisableDigitalOutTests.m */,
+				F8062AB31B25B6B90060BB01 /* Supporting Files */,
+			);
+			path = DisableDigitalOutTests;
+			sourceTree = "<group>";
+		};
+		F8062AB31B25B6B90060BB01 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8062AB41B25B6B90060BB01 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8062A9B1B25B6B90060BB01 /* DisableDigitalOut */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8062AB91B25B6B90060BB01 /* Build configuration list for PBXNativeTarget "DisableDigitalOut" */;
+			buildPhases = (
+				F8062A981B25B6B90060BB01 /* Sources */,
+				F8062A991B25B6B90060BB01 /* Frameworks */,
+				F8062A9A1B25B6B90060BB01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DisableDigitalOut;
+			productName = DisableDigitalOut;
+			productReference = F8062A9C1B25B6B90060BB01 /* DisableDigitalOut.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F8062AAE1B25B6B90060BB01 /* DisableDigitalOutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8062ABC1B25B6B90060BB01 /* Build configuration list for PBXNativeTarget "DisableDigitalOutTests" */;
+			buildPhases = (
+				F8062AAB1B25B6B90060BB01 /* Sources */,
+				F8062AAC1B25B6B90060BB01 /* Frameworks */,
+				F8062AAD1B25B6B90060BB01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8062AB11B25B6B90060BB01 /* PBXTargetDependency */,
+			);
+			name = DisableDigitalOutTests;
+			productName = DisableDigitalOutTests;
+			productReference = F8062AAF1B25B6B90060BB01 /* DisableDigitalOutTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8062A941B25B6B90060BB01 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = Syan;
+				TargetAttributes = {
+					F8062A9B1B25B6B90060BB01 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					F8062AAE1B25B6B90060BB01 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = F8062A9B1B25B6B90060BB01;
+					};
+				};
+			};
+			buildConfigurationList = F8062A971B25B6B90060BB01 /* Build configuration list for PBXProject "DisableDigitalOut" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F8062A931B25B6B90060BB01;
+			productRefGroup = F8062A9D1B25B6B90060BB01 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8062A9B1B25B6B90060BB01 /* DisableDigitalOut */,
+				F8062AAE1B25B6B90060BB01 /* DisableDigitalOutTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8062A9A1B25B6B90060BB01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8062AA71B25B6B90060BB01 /* Images.xcassets in Resources */,
+				F8062AAA1B25B6B90060BB01 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8062AAD1B25B6B90060BB01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8062A981B25B6B90060BB01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8062AA51B25B6B90060BB01 /* main.m in Sources */,
+				F8062AA31B25B6B90060BB01 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8062AAB1B25B6B90060BB01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8062AB61B25B6B90060BB01 /* DisableDigitalOutTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F8062AB11B25B6B90060BB01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8062A9B1B25B6B90060BB01 /* DisableDigitalOut */;
+			targetProxy = F8062AB01B25B6B90060BB01 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F8062AA81B25B6B90060BB01 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8062AA91B25B6B90060BB01 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F8062AB71B25B6B90060BB01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F8062AB81B25B6B90060BB01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F8062ABA1B25B6B90060BB01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DisableDigitalOut/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F8062ABB1B25B6B90060BB01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DisableDigitalOut/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F8062ABD1B25B6B90060BB01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DisableDigitalOutTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DisableDigitalOut.app/Contents/MacOS/DisableDigitalOut";
+			};
+			name = Debug;
+		};
+		F8062ABE1B25B6B90060BB01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DisableDigitalOutTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DisableDigitalOut.app/Contents/MacOS/DisableDigitalOut";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8062A971B25B6B90060BB01 /* Build configuration list for PBXProject "DisableDigitalOut" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8062AB71B25B6B90060BB01 /* Debug */,
+				F8062AB81B25B6B90060BB01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8062AB91B25B6B90060BB01 /* Build configuration list for PBXNativeTarget "DisableDigitalOut" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8062ABA1B25B6B90060BB01 /* Debug */,
+				F8062ABB1B25B6B90060BB01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F8062ABC1B25B6B90060BB01 /* Build configuration list for PBXNativeTarget "DisableDigitalOutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8062ABD1B25B6B90060BB01 /* Debug */,
+				F8062ABE1B25B6B90060BB01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F8062A941B25B6B90060BB01 /* Project object */;
+}
