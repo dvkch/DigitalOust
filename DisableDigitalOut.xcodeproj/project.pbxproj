@@ -7,34 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F8062AA31B25B6B90060BB01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8062AA21B25B6B90060BB01 /* AppDelegate.m */; };
+		F8062AA31B25B6B90060BB01 /* SYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8062AA21B25B6B90060BB01 /* SYAppDelegate.m */; };
 		F8062AA51B25B6B90060BB01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8062AA41B25B6B90060BB01 /* main.m */; };
 		F8062AA71B25B6B90060BB01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8062AA61B25B6B90060BB01 /* Images.xcassets */; };
 		F8062AAA1B25B6B90060BB01 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8062AA81B25B6B90060BB01 /* MainMenu.xib */; };
-		F8062AB61B25B6B90060BB01 /* DisableDigitalOutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8062AB51B25B6B90060BB01 /* DisableDigitalOutTests.m */; };
+		F8062AC11B25B76F0060BB01 /* SYIOKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F8062AC01B25B76F0060BB01 /* SYIOKitHelper.m */; };
+		F8062AC41B25B9F60060BB01 /* SYAppleHDAHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F8062AC31B25B9F60060BB01 /* SYAppleHDAHelper.m */; };
+		F8062AC71B25BB760060BB01 /* NSData+CocoaGitCompression.m in Sources */ = {isa = PBXBuildFile; fileRef = F8062AC61B25BB760060BB01 /* NSData+CocoaGitCompression.m */; };
+		F8062AC91B25BC010060BB01 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8062AC81B25BC010060BB01 /* IOKit.framework */; };
+		F8062ACB1B25BC100060BB01 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F8062ACA1B25BC100060BB01 /* libz.dylib */; };
+		F85247A91B299B3A003F391C /* KextUtilScript.sh in Resources */ = {isa = PBXBuildFile; fileRef = F85247A81B299B3A003F391C /* KextUtilScript.sh */; };
+		F8E2DDD71B263138007A1AD4 /* NSError+DisableDigitalOut.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E2DDD61B263138007A1AD4 /* NSError+DisableDigitalOut.m */; };
+		F8E2DDDF1B2636F1007A1AD4 /* SYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E2DDDD1B2636F1007A1AD4 /* SYViewController.m */; };
+		F8E2DDE01B2636F1007A1AD4 /* SYViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E2DDDE1B2636F1007A1AD4 /* SYViewController.xib */; };
+		F8E2DDE61B263E9C007A1AD4 /* SecurityInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E2DDE51B263E9C007A1AD4 /* SecurityInterface.framework */; };
+		F8E2DDEA1B2643E3007A1AD4 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E2DDE81B2643E3007A1AD4 /* check.png */; };
+		F8E2DDEB1B2643E3007A1AD4 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E2DDE91B2643E3007A1AD4 /* check@2x.png */; };
+		F8E2DDEE1B2644AA007A1AD4 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E2DDEC1B2644AA007A1AD4 /* cross.png */; };
+		F8E2DDEF1B2644AA007A1AD4 /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E2DDED1B2644AA007A1AD4 /* cross@2x.png */; };
+		F8E2DDF11B264561007A1AD4 /* SYNVRAMHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E2DDF01B264561007A1AD4 /* SYNVRAMHelper.m */; };
+		F8EC30961B28245900EF992A /* STPrivilegedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EC30951B28245900EF992A /* STPrivilegedTask.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		F8062AB01B25B6B90060BB01 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F8062A941B25B6B90060BB01 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F8062A9B1B25B6B90060BB01;
-			remoteInfo = DisableDigitalOut;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F8062A9C1B25B6B90060BB01 /* DisableDigitalOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisableDigitalOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8062AA01B25B6B90060BB01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F8062AA11B25B6B90060BB01 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F8062AA21B25B6B90060BB01 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F8062AA11B25B6B90060BB01 /* SYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYAppDelegate.h; sourceTree = "<group>"; };
+		F8062AA21B25B6B90060BB01 /* SYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYAppDelegate.m; sourceTree = "<group>"; };
 		F8062AA41B25B6B90060BB01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F8062AA61B25B6B90060BB01 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F8062AA91B25B6B90060BB01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		F8062AAF1B25B6B90060BB01 /* DisableDigitalOutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DisableDigitalOutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8062AB41B25B6B90060BB01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F8062AB51B25B6B90060BB01 /* DisableDigitalOutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisableDigitalOutTests.m; sourceTree = "<group>"; };
+		F8062ABF1B25B76F0060BB01 /* SYIOKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYIOKitHelper.h; sourceTree = "<group>"; };
+		F8062AC01B25B76F0060BB01 /* SYIOKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYIOKitHelper.m; sourceTree = "<group>"; };
+		F8062AC21B25B9F60060BB01 /* SYAppleHDAHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAppleHDAHelper.h; sourceTree = "<group>"; };
+		F8062AC31B25B9F60060BB01 /* SYAppleHDAHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAppleHDAHelper.m; sourceTree = "<group>"; };
+		F8062AC51B25BB760060BB01 /* NSData+CocoaGitCompression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CocoaGitCompression.h"; sourceTree = "<group>"; };
+		F8062AC61B25BB760060BB01 /* NSData+CocoaGitCompression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CocoaGitCompression.m"; sourceTree = "<group>"; };
+		F8062AC81B25BC010060BB01 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		F8062ACA1B25BC100060BB01 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F85247A81B299B3A003F391C /* KextUtilScript.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = KextUtilScript.sh; sourceTree = "<group>"; };
+		F8E2DDD51B263138007A1AD4 /* NSError+DisableDigitalOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+DisableDigitalOut.h"; sourceTree = "<group>"; };
+		F8E2DDD61B263138007A1AD4 /* NSError+DisableDigitalOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+DisableDigitalOut.m"; sourceTree = "<group>"; };
+		F8E2DDDC1B2636F1007A1AD4 /* SYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYViewController.h; sourceTree = "<group>"; };
+		F8E2DDDD1B2636F1007A1AD4 /* SYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYViewController.m; sourceTree = "<group>"; };
+		F8E2DDDE1B2636F1007A1AD4 /* SYViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYViewController.xib; sourceTree = "<group>"; };
+		F8E2DDE51B263E9C007A1AD4 /* SecurityInterface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SecurityInterface.framework; path = System/Library/Frameworks/SecurityInterface.framework; sourceTree = SDKROOT; };
+		F8E2DDE81B2643E3007A1AD4 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		F8E2DDE91B2643E3007A1AD4 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
+		F8E2DDEC1B2644AA007A1AD4 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
+		F8E2DDED1B2644AA007A1AD4 /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
+		F8E2DDF01B264561007A1AD4 /* SYNVRAMHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNVRAMHelper.m; sourceTree = "<group>"; };
+		F8E2DDF21B264572007A1AD4 /* SYNVRAMHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYNVRAMHelper.h; sourceTree = "<group>"; };
+		F8EC30941B28245900EF992A /* STPrivilegedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPrivilegedTask.h; sourceTree = "<group>"; };
+		F8EC30951B28245900EF992A /* STPrivilegedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPrivilegedTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,13 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F8062AAC1B25B6B90060BB01 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				F8E2DDE61B263E9C007A1AD4 /* SecurityInterface.framework in Frameworks */,
+				F8062ACB1B25BC100060BB01 /* libz.dylib in Frameworks */,
+				F8062AC91B25BC010060BB01 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				F8062A9E1B25B6B90060BB01 /* DisableDigitalOut */,
-				F8062AB21B25B6B90060BB01 /* DisableDigitalOutTests */,
+				F8E2DDDB1B2636D6007A1AD4 /* Frameworks */,
 				F8062A9D1B25B6B90060BB01 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				F8062A9C1B25B6B90060BB01 /* DisableDigitalOut.app */,
-				F8062AAF1B25B6B90060BB01 /* DisableDigitalOutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,11 +96,13 @@
 		F8062A9E1B25B6B90060BB01 /* DisableDigitalOut */ = {
 			isa = PBXGroup;
 			children = (
-				F8062AA11B25B6B90060BB01 /* AppDelegate.h */,
-				F8062AA21B25B6B90060BB01 /* AppDelegate.m */,
+				F8EEEADA1B27789100F84430 /* Views */,
+				F8EEEADB1B27789F00F84430 /* Patch tools */,
+				F8EEEADC1B2778AE00F84430 /* Categories */,
 				F8062AA61B25B6B90060BB01 /* Images.xcassets */,
 				F8062AA81B25B6B90060BB01 /* MainMenu.xib */,
 				F8062A9F1B25B6B90060BB01 /* Supporting Files */,
+				F8E2DDE71B2643E3007A1AD4 /* Resources */,
 			);
 			path = DisableDigitalOut;
 			sourceTree = "<group>";
@@ -94,21 +116,64 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F8062AB21B25B6B90060BB01 /* DisableDigitalOutTests */ = {
+		F8E2DDDB1B2636D6007A1AD4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F8062AB51B25B6B90060BB01 /* DisableDigitalOutTests.m */,
-				F8062AB31B25B6B90060BB01 /* Supporting Files */,
+				F8E2DDE51B263E9C007A1AD4 /* SecurityInterface.framework */,
+				F8062ACA1B25BC100060BB01 /* libz.dylib */,
+				F8062AC81B25BC010060BB01 /* IOKit.framework */,
 			);
-			path = DisableDigitalOutTests;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F8062AB31B25B6B90060BB01 /* Supporting Files */ = {
+		F8E2DDE71B2643E3007A1AD4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F8062AB41B25B6B90060BB01 /* Info.plist */,
+				F85247A81B299B3A003F391C /* KextUtilScript.sh */,
+				F8E2DDE81B2643E3007A1AD4 /* check.png */,
+				F8E2DDE91B2643E3007A1AD4 /* check@2x.png */,
+				F8E2DDEC1B2644AA007A1AD4 /* cross.png */,
+				F8E2DDED1B2644AA007A1AD4 /* cross@2x.png */,
 			);
-			name = "Supporting Files";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F8EEEADA1B27789100F84430 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F8062AA11B25B6B90060BB01 /* SYAppDelegate.h */,
+				F8062AA21B25B6B90060BB01 /* SYAppDelegate.m */,
+				F8E2DDDC1B2636F1007A1AD4 /* SYViewController.h */,
+				F8E2DDDD1B2636F1007A1AD4 /* SYViewController.m */,
+				F8E2DDDE1B2636F1007A1AD4 /* SYViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F8EEEADB1B27789F00F84430 /* Patch tools */ = {
+			isa = PBXGroup;
+			children = (
+				F8062ABF1B25B76F0060BB01 /* SYIOKitHelper.h */,
+				F8062AC01B25B76F0060BB01 /* SYIOKitHelper.m */,
+				F8062AC21B25B9F60060BB01 /* SYAppleHDAHelper.h */,
+				F8062AC31B25B9F60060BB01 /* SYAppleHDAHelper.m */,
+				F8E2DDF21B264572007A1AD4 /* SYNVRAMHelper.h */,
+				F8E2DDF01B264561007A1AD4 /* SYNVRAMHelper.m */,
+				F8EC30941B28245900EF992A /* STPrivilegedTask.h */,
+				F8EC30951B28245900EF992A /* STPrivilegedTask.m */,
+			);
+			name = "Patch tools";
+			sourceTree = "<group>";
+		};
+		F8EEEADC1B2778AE00F84430 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F8062AC51B25BB760060BB01 /* NSData+CocoaGitCompression.h */,
+				F8062AC61B25BB760060BB01 /* NSData+CocoaGitCompression.m */,
+				F8E2DDD51B263138007A1AD4 /* NSError+DisableDigitalOut.h */,
+				F8E2DDD61B263138007A1AD4 /* NSError+DisableDigitalOut.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,39 +196,18 @@
 			productReference = F8062A9C1B25B6B90060BB01 /* DisableDigitalOut.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F8062AAE1B25B6B90060BB01 /* DisableDigitalOutTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F8062ABC1B25B6B90060BB01 /* Build configuration list for PBXNativeTarget "DisableDigitalOutTests" */;
-			buildPhases = (
-				F8062AAB1B25B6B90060BB01 /* Sources */,
-				F8062AAC1B25B6B90060BB01 /* Frameworks */,
-				F8062AAD1B25B6B90060BB01 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F8062AB11B25B6B90060BB01 /* PBXTargetDependency */,
-			);
-			name = DisableDigitalOutTests;
-			productName = DisableDigitalOutTests;
-			productReference = F8062AAF1B25B6B90060BB01 /* DisableDigitalOutTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		F8062A941B25B6B90060BB01 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SY;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Syan;
 				TargetAttributes = {
 					F8062A9B1B25B6B90060BB01 = {
 						CreatedOnToolsVersion = 6.3.2;
-					};
-					F8062AAE1B25B6B90060BB01 = {
-						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = F8062A9B1B25B6B90060BB01;
 					};
 				};
 			};
@@ -181,7 +225,6 @@
 			projectRoot = "";
 			targets = (
 				F8062A9B1B25B6B90060BB01 /* DisableDigitalOut */,
-				F8062AAE1B25B6B90060BB01 /* DisableDigitalOutTests */,
 			);
 		};
 /* End PBXProject section */
@@ -191,15 +234,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8E2DDEE1B2644AA007A1AD4 /* cross.png in Resources */,
+				F85247A91B299B3A003F391C /* KextUtilScript.sh in Resources */,
+				F8E2DDEB1B2643E3007A1AD4 /* check@2x.png in Resources */,
 				F8062AA71B25B6B90060BB01 /* Images.xcassets in Resources */,
+				F8E2DDE01B2636F1007A1AD4 /* SYViewController.xib in Resources */,
+				F8E2DDEF1B2644AA007A1AD4 /* cross@2x.png in Resources */,
+				F8E2DDEA1B2643E3007A1AD4 /* check.png in Resources */,
 				F8062AAA1B25B6B90060BB01 /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F8062AAD1B25B6B90060BB01 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,28 +252,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8E2DDDF1B2636F1007A1AD4 /* SYViewController.m in Sources */,
+				F8E2DDD71B263138007A1AD4 /* NSError+DisableDigitalOut.m in Sources */,
+				F8062AC71B25BB760060BB01 /* NSData+CocoaGitCompression.m in Sources */,
+				F8062AC41B25B9F60060BB01 /* SYAppleHDAHelper.m in Sources */,
+				F8E2DDF11B264561007A1AD4 /* SYNVRAMHelper.m in Sources */,
+				F8062AC11B25B76F0060BB01 /* SYIOKitHelper.m in Sources */,
 				F8062AA51B25B6B90060BB01 /* main.m in Sources */,
-				F8062AA31B25B6B90060BB01 /* AppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F8062AAB1B25B6B90060BB01 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F8062AB61B25B6B90060BB01 /* DisableDigitalOutTests.m in Sources */,
+				F8062AA31B25B6B90060BB01 /* SYAppDelegate.m in Sources */,
+				F8EC30961B28245900EF992A /* STPrivilegedTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F8062AB11B25B6B90060BB01 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F8062A9B1B25B6B90060BB01 /* DisableDigitalOut */;
-			targetProxy = F8062AB01B25B6B90060BB01 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F8062AA81B25B6B90060BB01 /* MainMenu.xib */ = {
@@ -346,42 +379,6 @@
 			};
 			name = Release;
 		};
-		F8062ABD1B25B6B90060BB01 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = DisableDigitalOutTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DisableDigitalOut.app/Contents/MacOS/DisableDigitalOut";
-			};
-			name = Debug;
-		};
-		F8062ABE1B25B6B90060BB01 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = DisableDigitalOutTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DisableDigitalOut.app/Contents/MacOS/DisableDigitalOut";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -401,14 +398,7 @@
 				F8062ABB1B25B6B90060BB01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		F8062ABC1B25B6B90060BB01 /* Build configuration list for PBXNativeTarget "DisableDigitalOutTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8062ABD1B25B6B90060BB01 /* Debug */,
-				F8062ABE1B25B6B90060BB01 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
