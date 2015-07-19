@@ -1,6 +1,6 @@
 //
 //  SYViewController.m
-//  DisableDigitalOut
+//  DigitalOust
 //
 //  Created by Stanislas Chevallier on 08/06/15.
 //  Copyright (c) 2015 Syan. All rights reserved.
@@ -13,7 +13,7 @@
 #import "SYNVRAMHelper.h"
 #import "STPrivilegedTask.h"
 #import "SYAppDelegate.h"
-#import "NSError+DisableDigitalOut.h"
+#import "NSError+DigitalOust.h"
 #import "SYComms.h"
 #import "SYPatchItemView.h"
 #import "Masonry.h"
@@ -26,6 +26,8 @@
 @property (nonatomic, strong) SYPatchItemView *patchKextDevModePatch;
 @property (nonatomic, strong) SYPatchItemView *patchRootlessPatch;
 @property (nonatomic, strong) NSMutableArray *patchViews;
+@property (nonatomic, strong) NSTextField *labelDonate;
+@property (nonatomic, strong) NSTextField *labelWebsite;
 
 @property (nonatomic, strong) STPrivilegedTask *task;
 @property (nonatomic, strong) NSMutableString *log;
@@ -50,17 +52,35 @@
     [self.labelTitle setEditable:NO];
     [self.labelTitle setFont:[NSFont fontWithName:@"HelveticaNeue-UltraLight" size:42]];
     [self.labelTitle setDrawsBackground:NO];
-    [self.labelTitle setStringValue:@"Disable Digital Out"];
+    [self.labelTitle setStringValue:@"Digital Oust"];
 
     
     self.labelMaker = [[NSTextField alloc] init];
     [self.view addSubview:self.labelMaker];
     [self.labelMaker setBordered:NO];
     [self.labelMaker setEditable:NO];
-    [self.labelMaker setFont:[NSFont fontWithName:@"HelveticaNeue-LightItalic" size:12]];
+    [self.labelMaker setFont:[NSFont fontWithName:@"HelveticaNeue-LightItalic" size:[NSFont systemFontSize]]];
     [self.labelMaker setDrawsBackground:NO];
     [self.labelMaker setStringValue:@"by @Syan_me"];
-
+    
+    
+    self.labelDonate = [[NSTextField alloc] init];
+    [self.view addSubview:self.labelDonate];
+    [self.labelDonate setBordered:NO];
+    [self.labelDonate setEditable:NO];
+    //[self.labelDonate setFont:[NSFont fontWithName:@"HelveticaNeue-Light" size:[NSFont systemFontSize]]];
+    [self.labelDonate setDrawsBackground:NO];
+    [self.labelDonate setStringValue:@"Donate"];
+    
+    
+    self.labelWebsite = [[NSTextField alloc] init];
+    [self.view addSubview:self.labelWebsite];
+    [self.labelWebsite setBordered:NO];
+    [self.labelWebsite setEditable:NO];
+    //[self.labelWebsite setFont:[NSFont fontWithName:@"HelveticaNeue-Light" size:[NSFont systemFontSize]]];
+    [self.labelWebsite setDrawsBackground:NO];
+    [self.labelWebsite setStringValue:@"Website"];
+    
     
     self.patchViews = [NSMutableArray array];
     
@@ -177,12 +197,18 @@
         make.height.equalTo(@21);
     }];
     
+    [self.labelDonate mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.labelTitle);
+        make.right.equalTo(self.labelMaker);
+        make.bottom.equalTo(@(-10));
+    }];
+    
     for (NSUInteger i = 0; i < self.patchViews.count; ++i)
     {
         NSView *view = self.patchViews[i];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             if (i == 0)
-                make.top.equalTo(self.labelTitle.mas_bottom).offset(50);
+                make.top.equalTo(self.labelTitle.mas_bottom).offset(40);
             else
                 make.top.equalTo(((NSView *)self.patchViews[i-1]).mas_bottom).offset(20);
             make.left.equalTo(self.labelTitle);
@@ -214,7 +240,7 @@
     if(self.task)
         return;
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"DisableDigitalOutHelper" ofType:@""];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"DigitalOustHelper" ofType:@""];
     STPrivilegedTask *task = [[STPrivilegedTask alloc] initWithLaunchPath:path];
     OSStatus oserror = [task launch];
     

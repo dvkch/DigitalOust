@@ -1,6 +1,6 @@
 //
 //  main.m
-//  DisableDigitalOutHelper
+//  DigitalOustHelper
 //
 //  Created by Stanislas Chevallier on 11/06/15.
 //  Copyright © 2015 Syan. All rights reserved.
@@ -11,7 +11,7 @@
 #import "SYAppleHDAHelper.h"
 #import "SYIOKitHelper.h"
 #import "SYNVRAMHelper.h"
-#import "NSError+DisableDigitalOut.h"
+#import "NSError+DigitalOust.h"
 
 @interface SYAgentCommsReceiver : NSObject <SYCommsDelegate>
 @end

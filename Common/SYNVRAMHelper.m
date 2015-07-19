@@ -1,6 +1,6 @@
 //
 //  SYNVRAMHelper.m
-//  DisableDigitalOut
+//  DigitalOust
 //
 //  Created by Stanislas Chevallier on 08/06/15.
 //  Copyright (c) 2015 Syan. All rights reserved.
@@ -15,7 +15,7 @@
 #include <mach/mach_error.h>
 #include "SYNVRAMHelper.h"
 #import "STPrivilegedTask.h"
-#import "NSError+DisableDigitalOut.h"
+#import "NSError+DigitalOust.h"
 
 NSString * const SYNVRAMHelper_bootArgs_kextDevModeON  = @"kext-dev-mode=1";
 NSString * const SYNVRAMHelper_bootArgs_kextDevModeOFF = @"kext-dev-mode=0";

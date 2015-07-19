@@ -1,6 +1,6 @@
 //
 //  SYComms.m
-//  DisableDigitalOut
+//  DigitalOust
 //
 //  Created by Stanislas Chevallier on 11/06/15.
 //  Copyright © 2015 Syan. All rights reserved.
@@ -49,7 +49,7 @@ static void SYCommsCallback(CFNotificationCenterRef center,
         CFNotificationCenterAddObserver(CFNotificationCenterGetDistributedCenter(),
                                         NULL,
                                         SYCommsCallback,
-                                        CFSTR("me.syan.DisableDigitalOut"),
+                                        CFSTR("me.syan.DigitalOust"),
                                         NULL,
                                         CFNotificationSuspensionBehaviorDeliverImmediately);
     }
@@ -106,7 +106,7 @@ static void SYCommsCallback(CFNotificationCenterRef center,
     
     NSDictionary *dic = @{@"identifier":self.identifier,@"content":message};
     CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(),
-                                         CFSTR("me.syan.DisableDigitalOut"),
+                                         CFSTR("me.syan.DigitalOust"),
                                          NULL,
                                          (CFDictionaryRef)dic,
                                          true);

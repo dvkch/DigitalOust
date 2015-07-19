@@ -1,6 +1,6 @@
 //
 //  SYPatchItemView.h
-//  DisableDigitalOut
+//  DigitalOust
 //
 //  Created by Stan Chevallier on 28/06/2015.
 //  Copyright © 2015 Syan. All rights reserved.

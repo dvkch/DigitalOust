@@ -1,6 +1,6 @@
 //
 //  SYPatchItemView.m
-//  DisableDigitalOut
+//  DigitalOust
 //
 //  Created by Stan Chevallier on 28/06/2015.
 //  Copyright © 2015 Syan. All rights reserved.
@@ -27,15 +27,8 @@ static NSImage *imageCross;
 
 + (void)initialize
 {
-#if !TARGET_INTERFACE_BUILDER
-    NSBundle *bundle = [NSBundle mainBundle];
-#else
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-#endif
-    NSString *fileCheck = [bundle pathForResource:@"check" ofType:@"png"];
-    NSString *fileCross = [bundle pathForResource:@"cross" ofType:@"png"];
-    imageCheck = [[NSImage alloc] initWithContentsOfFile:fileCheck];
-    imageCross = [[NSImage alloc] initWithContentsOfFile:fileCross];
+    imageCheck = [NSImage imageNamed:@"check.png"];
+    imageCross = [NSImage imageNamed:@"cross.png"];
 }
 
 - (nonnull instancetype)init

@@ -1,6 +1,6 @@
 //
 //  SYComms.h
-//  DisableDigitalOut
+//  DigitalOust
 //
 //  Created by Stanislas Chevallier on 11/06/15.
 //  Copyright © 2015 Syan. All rights reserved.

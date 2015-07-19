@@ -1,18 +1,18 @@
 //
-//  NSError+DisableDigitalOut.m
-//  DisableDigitalOut
+//  NSError+DigitalOust.m
+//  DigitalOust
 //
 //  Created by Stanislas Chevallier on 18/05/15.
 //  Copyright (c) 2015 Syan. All rights reserved.
 //
 
-#import "NSError+DisableDigitalOut.h"
+#import "NSError+DigitalOust.h"
 
-NSString * const SYErrorDomain    = @"SYErrorDomain_DisableDigitalOut";
-NSString * const SYErrorAuthInfo  = @"SYErrorAuthInfo_DisableDigitalOut";
-NSString * const SYErrorIOKitInfo = @"SYErrorIOKitInfo_DisableDigitalOut";
+NSString * const SYErrorDomain    = @"SYErrorDomain_DigitalOust";
+NSString * const SYErrorAuthInfo  = @"SYErrorAuthInfo_DigitalOust";
+NSString * const SYErrorIOKitInfo = @"SYErrorIOKitInfo_DigitalOust";
 
-@implementation NSError (DisableDigitalOut)
+@implementation NSError (DigitalOust)
 
 - (NSString *)localizedDescriptionSY
 {

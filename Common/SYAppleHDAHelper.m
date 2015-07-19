@@ -1,6 +1,6 @@
 //
 //  SYAppleHDAHelper.m
-//  DisableDigitalOut
+//  DigitalOust
 //
 //  Created by Stanislas Chevallier on 08/06/15.
 //  Copyright (c) 2015 Syan. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "SYAppleHDAHelper.h"
 #import "NSData+CocoaGitCompression.h"
-#import "NSError+DisableDigitalOut.h"
+#import "NSError+DigitalOust.h"
 #import "SYAppDelegate.h"
 
 NSString * const SYAppleHDA_PlatformFile        = @"Platforms.xml.zlib";

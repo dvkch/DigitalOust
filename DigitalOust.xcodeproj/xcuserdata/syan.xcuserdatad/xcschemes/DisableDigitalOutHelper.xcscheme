@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F8062A9B1B25B6B90060BB01"
-               BuildableName = "DisableDigitalOut.app"
-               BlueprintName = "DisableDigitalOut"
-               ReferencedContainer = "container:DisableDigitalOut.xcodeproj">
+               BlueprintIdentifier = "F81786A31B2A0D630018360D"
+               BuildableName = "DigitalOust"
+               BlueprintName = "DigitalOustHelper"
+               ReferencedContainer = "container:DigitalOust.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F8062A9B1B25B6B90060BB01"
-            BuildableName = "DisableDigitalOut.app"
-            BlueprintName = "DisableDigitalOut"
-            ReferencedContainer = "container:DisableDigitalOut.xcodeproj">
+            BlueprintIdentifier = "F81786A31B2A0D630018360D"
+            BuildableName = "DigitalOust"
+            BlueprintName = "DigitalOustHelper"
+            ReferencedContainer = "container:DigitalOust.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F8062A9B1B25B6B90060BB01"
-            BuildableName = "DisableDigitalOut.app"
-            BlueprintName = "DisableDigitalOut"
-            ReferencedContainer = "container:DisableDigitalOut.xcodeproj">
+            BlueprintIdentifier = "F81786A31B2A0D630018360D"
+            BuildableName = "DigitalOust"
+            BlueprintName = "DigitalOustHelper"
+            ReferencedContainer = "container:DigitalOust.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F8062A9B1B25B6B90060BB01"
-            BuildableName = "DisableDigitalOut.app"
-            BlueprintName = "DisableDigitalOut"
-            ReferencedContainer = "container:DisableDigitalOut.xcodeproj">
+            BlueprintIdentifier = "F81786A31B2A0D630018360D"
+            BuildableName = "DigitalOust"
+            BlueprintName = "DigitalOustHelper"
+            ReferencedContainer = "container:DigitalOust.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
