@@ -271,6 +271,7 @@ OSStatus const errAuthorizationFnNoLongerExists = -70001;
     
     /* Read the first line of stdout => it's the pid */
     {
+        /*
         int stdoutfd = fileno(outputFile);
         char pidnum[32];
         int i = 0;
@@ -290,6 +291,7 @@ OSStatus const errAuthorizationFnNoLongerExists = -70001;
         }
         
         sscanf(pidnum, "%d", &pid);
+         */
     }
     
     // start monitoring task

@@ -10,9 +10,5 @@
 
 @interface SYAppDelegate : NSObject <NSApplicationDelegate>
 
-+ (SYAppDelegate *)obtain;
-- (BOOL)appRunningAsRoot;
-+ (void)log:(NSString *)format, ...;
-
 @end
 

@@ -10,9 +10,5 @@
 
 int main(int argc, const char * argv[])
 {
-    // we need the spawned process to tell us it's pid
-    if(geteuid() == 0)
-        printf("%d\n", getpid());
-    
     return NSApplicationMain(argc, argv);
 }

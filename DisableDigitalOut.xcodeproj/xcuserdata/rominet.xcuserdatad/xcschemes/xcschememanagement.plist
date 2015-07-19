@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>DisableDigitalOutHelper.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,21 @@
 			<true/>
 		</dict>
 		<key>F8062AAE1B25B6B90060BB01</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F81786A31B2A0D630018360D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F81BF23D1B2A07E3002B1340</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F8F66E701B29FB9F0047603B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

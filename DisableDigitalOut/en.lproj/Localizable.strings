@@ -1,0 +1,54 @@
+/* No comment provided by engineer. */
+"Backup file absent, can continue" = "Backup file absent, can continue";
+
+/* No comment provided by engineer. */
+"Backup file is present, revert to it before patching again" = "Backup file is present, revert to it before patching again";
+
+/* No comment provided by engineer. */
+"Can't identify outputs list for path %@" = "Can't identify outputs list for path %@";
+
+/* No comment provided by engineer. */
+"Card seems fully supported" = "Card seems fully supported";
+
+/* No comment provided by engineer. */
+"Couldn't find number of outputs" = "Couldn't find number of outputs";
+
+/* No comment provided by engineer. */
+"Digital output found in layout file %@" = "Digital output found in layout file %@";
+
+/* No comment provided by engineer. */
+"Digital output wasn't found in layout file %@" = "Digital output wasn't found in layout file %@";
+
+/* No comment provided by engineer. */
+"Found %@ outputs in layout file" = "Found %@ outputs in layout file";
+
+/* No comment provided by engineer. */
+"Found list of outputs in path file %@" = "Found list of outputs in path file %@";
+
+/* No comment provided by engineer. */
+"Layout file %@ missing" = "Layout file %@ missing";
+
+/* No comment provided by engineer. */
+"Layout file %@ present" = "Layout file %@ present";
+
+/* No comment provided by engineer. */
+"More than 1 path reference in layout file %@" = "More than 1 path reference in layout file %@";
+
+/* No comment provided by engineer. */
+"Number of outputs for layout %@ and path %@ differs (%@ != %@)" = "Number of outputs for layout %1$@ and path %2$@ differs (%3$@ ≠ %4$@)";
+
+/* No comment provided by engineer. */
+"Number of outputs for layout %@ and path %@ is the same" = "Number of outputs for layout %1$@ and path %2$@ is the same";
+
+/* Patch aborted */
+"Patch aborted" = "Patch aborted";
+
+/* No comment provided by engineer. */
+"Single path reference found" = "Single path reference found";
+
+/* No comment provided by engineer. */
+"Sound card not recognized" = "Sound card not recognized";
+
+/* No comment provided by engineer. */
+"Sound card recognized, layout %@" = "Sound card recognized, layout %@";
+

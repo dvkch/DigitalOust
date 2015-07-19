@@ -7,57 +7,109 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05DA0C9DCDDFB894405820AF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B33CAF380DB7E6030D1950 /* libPods.a */; };
+		971516471B59C02E00EC3B06 /* SYCommandLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 971516461B59C02E00EC3B06 /* SYCommandLine.m */; };
+		9776ED061B3098920084550B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9776ED081B3098920084550B /* Localizable.strings */; };
+		9776ED0A1B3099810084550B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9776ED091B3099810084550B /* MainMenu.xib */; };
+		9776ED0E1B309F030084550B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9776ED101B309F030084550B /* InfoPlist.strings */; };
+		9776ED141B309F030084550B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9776ED161B309F030084550B /* Localizable.strings */; };
+		979574031B400096001617B6 /* SYPatchItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 979574021B400096001617B6 /* SYPatchItemView.m */; };
 		F8062AA31B25B6B90060BB01 /* SYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8062AA21B25B6B90060BB01 /* SYAppDelegate.m */; };
 		F8062AA51B25B6B90060BB01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8062AA41B25B6B90060BB01 /* main.m */; };
 		F8062AA71B25B6B90060BB01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8062AA61B25B6B90060BB01 /* Images.xcassets */; };
-		F8062AAA1B25B6B90060BB01 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8062AA81B25B6B90060BB01 /* MainMenu.xib */; };
-		F8062AC11B25B76F0060BB01 /* SYIOKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F8062AC01B25B76F0060BB01 /* SYIOKitHelper.m */; };
-		F8062AC41B25B9F60060BB01 /* SYAppleHDAHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F8062AC31B25B9F60060BB01 /* SYAppleHDAHelper.m */; };
-		F8062AC71B25BB760060BB01 /* NSData+CocoaGitCompression.m in Sources */ = {isa = PBXBuildFile; fileRef = F8062AC61B25BB760060BB01 /* NSData+CocoaGitCompression.m */; };
 		F8062AC91B25BC010060BB01 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8062AC81B25BC010060BB01 /* IOKit.framework */; };
 		F8062ACB1B25BC100060BB01 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F8062ACA1B25BC100060BB01 /* libz.dylib */; };
-		F85247A91B299B3A003F391C /* KextUtilScript.sh in Resources */ = {isa = PBXBuildFile; fileRef = F85247A81B299B3A003F391C /* KextUtilScript.sh */; };
-		F8E2DDD71B263138007A1AD4 /* NSError+DisableDigitalOut.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E2DDD61B263138007A1AD4 /* NSError+DisableDigitalOut.m */; };
+		F81786A71B2A0D630018360D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F81786A61B2A0D630018360D /* main.m */; };
+		F81786AB1B2A0D6D0018360D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F8062ACA1B25BC100060BB01 /* libz.dylib */; };
+		F81786AC1B2A0D6E0018360D /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8062AC81B25BC010060BB01 /* IOKit.framework */; };
+		F81BF2291B2A0034002B1340 /* SYAppleHDAHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F81BF2241B2A0034002B1340 /* SYAppleHDAHelper.m */; };
+		F81BF22B1B2A0034002B1340 /* SYIOKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F81BF2261B2A0034002B1340 /* SYIOKitHelper.m */; };
+		F81BF22D1B2A0034002B1340 /* SYNVRAMHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F81BF2281B2A0034002B1340 /* SYNVRAMHelper.m */; };
+		F81BF2331B2A003C002B1340 /* NSData+CocoaGitCompression.m in Sources */ = {isa = PBXBuildFile; fileRef = F81BF2301B2A003C002B1340 /* NSData+CocoaGitCompression.m */; };
+		F81BF2351B2A003C002B1340 /* NSError+DisableDigitalOut.m in Sources */ = {isa = PBXBuildFile; fileRef = F81BF2321B2A003C002B1340 /* NSError+DisableDigitalOut.m */; };
+		F829F37E1B2A17E9009B05BC /* SYComms.m in Sources */ = {isa = PBXBuildFile; fileRef = F829F37D1B2A17E9009B05BC /* SYComms.m */; };
+		F829F37F1B2A17F0009B05BC /* SYComms.m in Sources */ = {isa = PBXBuildFile; fileRef = F829F37D1B2A17E9009B05BC /* SYComms.m */; };
+		F870C7281B2A0DEB0041CAF8 /* SYAppleHDAHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F81BF2241B2A0034002B1340 /* SYAppleHDAHelper.m */; };
+		F870C7291B2A0DEB0041CAF8 /* SYIOKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F81BF2261B2A0034002B1340 /* SYIOKitHelper.m */; };
+		F870C72A1B2A0DEB0041CAF8 /* SYNVRAMHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F81BF2281B2A0034002B1340 /* SYNVRAMHelper.m */; };
+		F870C72B1B2A0DEB0041CAF8 /* NSData+CocoaGitCompression.m in Sources */ = {isa = PBXBuildFile; fileRef = F81BF2301B2A003C002B1340 /* NSData+CocoaGitCompression.m */; };
+		F870C72C1B2A0DEB0041CAF8 /* NSError+DisableDigitalOut.m in Sources */ = {isa = PBXBuildFile; fileRef = F81BF2321B2A003C002B1340 /* NSError+DisableDigitalOut.m */; };
+		F8DF5BA01B2A241200BD7C1D /* DisableDigitalOutHelper in Resources */ = {isa = PBXBuildFile; fileRef = F81786A41B2A0D630018360D /* DisableDigitalOutHelper */; };
 		F8E2DDDF1B2636F1007A1AD4 /* SYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E2DDDD1B2636F1007A1AD4 /* SYViewController.m */; };
-		F8E2DDE01B2636F1007A1AD4 /* SYViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E2DDDE1B2636F1007A1AD4 /* SYViewController.xib */; };
+		F8E2DDE01B2636F1007A1AD4 /* SYViewController__.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E2DDDE1B2636F1007A1AD4 /* SYViewController__.xib */; };
 		F8E2DDE61B263E9C007A1AD4 /* SecurityInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E2DDE51B263E9C007A1AD4 /* SecurityInterface.framework */; };
 		F8E2DDEA1B2643E3007A1AD4 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E2DDE81B2643E3007A1AD4 /* check.png */; };
 		F8E2DDEB1B2643E3007A1AD4 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E2DDE91B2643E3007A1AD4 /* check@2x.png */; };
 		F8E2DDEE1B2644AA007A1AD4 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E2DDEC1B2644AA007A1AD4 /* cross.png */; };
 		F8E2DDEF1B2644AA007A1AD4 /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E2DDED1B2644AA007A1AD4 /* cross@2x.png */; };
-		F8E2DDF11B264561007A1AD4 /* SYNVRAMHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E2DDF01B264561007A1AD4 /* SYNVRAMHelper.m */; };
 		F8EC30961B28245900EF992A /* STPrivilegedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EC30951B28245900EF992A /* STPrivilegedTask.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F870C7261B2A0DDA0041CAF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8062A941B25B6B90060BB01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F81786A31B2A0D630018360D;
+			remoteInfo = DisableDigitalOutHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F81786A21B2A0D630018360D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		5A1E5B28B4C311BF36CBE5E0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		68B33CAF380DB7E6030D1950 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		971516451B59C02E00EC3B06 /* SYCommandLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYCommandLine.h; sourceTree = "<group>"; };
+		971516461B59C02E00EC3B06 /* SYCommandLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYCommandLine.m; sourceTree = "<group>"; };
+		9776ED071B3098920084550B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9776ED091B3099810084550B /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		9776ED0B1B3099890084550B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9776ED0F1B309F030084550B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9776ED151B309F030084550B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		979574011B400096001617B6 /* SYPatchItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYPatchItemView.h; sourceTree = "<group>"; };
+		979574021B400096001617B6 /* SYPatchItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYPatchItemView.m; sourceTree = "<group>"; };
+		CE6C96876505BF48AD021CC7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F8062A9C1B25B6B90060BB01 /* DisableDigitalOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisableDigitalOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8062AA01B25B6B90060BB01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8062AA11B25B6B90060BB01 /* SYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYAppDelegate.h; sourceTree = "<group>"; };
 		F8062AA21B25B6B90060BB01 /* SYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYAppDelegate.m; sourceTree = "<group>"; };
 		F8062AA41B25B6B90060BB01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F8062AA61B25B6B90060BB01 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F8062AA91B25B6B90060BB01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		F8062ABF1B25B76F0060BB01 /* SYIOKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYIOKitHelper.h; sourceTree = "<group>"; };
-		F8062AC01B25B76F0060BB01 /* SYIOKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYIOKitHelper.m; sourceTree = "<group>"; };
-		F8062AC21B25B9F60060BB01 /* SYAppleHDAHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAppleHDAHelper.h; sourceTree = "<group>"; };
-		F8062AC31B25B9F60060BB01 /* SYAppleHDAHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAppleHDAHelper.m; sourceTree = "<group>"; };
-		F8062AC51B25BB760060BB01 /* NSData+CocoaGitCompression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CocoaGitCompression.h"; sourceTree = "<group>"; };
-		F8062AC61B25BB760060BB01 /* NSData+CocoaGitCompression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CocoaGitCompression.m"; sourceTree = "<group>"; };
 		F8062AC81B25BC010060BB01 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		F8062ACA1B25BC100060BB01 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		F85247A81B299B3A003F391C /* KextUtilScript.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = KextUtilScript.sh; sourceTree = "<group>"; };
-		F8E2DDD51B263138007A1AD4 /* NSError+DisableDigitalOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+DisableDigitalOut.h"; sourceTree = "<group>"; };
-		F8E2DDD61B263138007A1AD4 /* NSError+DisableDigitalOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+DisableDigitalOut.m"; sourceTree = "<group>"; };
+		F81786A41B2A0D630018360D /* DisableDigitalOutHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DisableDigitalOutHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		F81786A61B2A0D630018360D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F81BF2231B2A0034002B1340 /* SYAppleHDAHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYAppleHDAHelper.h; sourceTree = "<group>"; };
+		F81BF2241B2A0034002B1340 /* SYAppleHDAHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYAppleHDAHelper.m; sourceTree = "<group>"; };
+		F81BF2251B2A0034002B1340 /* SYIOKitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYIOKitHelper.h; sourceTree = "<group>"; };
+		F81BF2261B2A0034002B1340 /* SYIOKitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYIOKitHelper.m; sourceTree = "<group>"; };
+		F81BF2271B2A0034002B1340 /* SYNVRAMHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNVRAMHelper.h; sourceTree = "<group>"; };
+		F81BF2281B2A0034002B1340 /* SYNVRAMHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNVRAMHelper.m; sourceTree = "<group>"; };
+		F81BF22F1B2A003C002B1340 /* NSData+CocoaGitCompression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CocoaGitCompression.h"; sourceTree = "<group>"; };
+		F81BF2301B2A003C002B1340 /* NSData+CocoaGitCompression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CocoaGitCompression.m"; sourceTree = "<group>"; };
+		F81BF2311B2A003C002B1340 /* NSError+DisableDigitalOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+DisableDigitalOut.h"; sourceTree = "<group>"; };
+		F81BF2321B2A003C002B1340 /* NSError+DisableDigitalOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+DisableDigitalOut.m"; sourceTree = "<group>"; };
+		F829F37C1B2A17E9009B05BC /* SYComms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYComms.h; sourceTree = "<group>"; };
+		F829F37D1B2A17E9009B05BC /* SYComms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYComms.m; sourceTree = "<group>"; };
 		F8E2DDDC1B2636F1007A1AD4 /* SYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYViewController.h; sourceTree = "<group>"; };
 		F8E2DDDD1B2636F1007A1AD4 /* SYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYViewController.m; sourceTree = "<group>"; };
-		F8E2DDDE1B2636F1007A1AD4 /* SYViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYViewController.xib; sourceTree = "<group>"; };
+		F8E2DDDE1B2636F1007A1AD4 /* SYViewController__.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYViewController__.xib; sourceTree = "<group>"; };
 		F8E2DDE51B263E9C007A1AD4 /* SecurityInterface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SecurityInterface.framework; path = System/Library/Frameworks/SecurityInterface.framework; sourceTree = SDKROOT; };
 		F8E2DDE81B2643E3007A1AD4 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		F8E2DDE91B2643E3007A1AD4 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
 		F8E2DDEC1B2644AA007A1AD4 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		F8E2DDED1B2644AA007A1AD4 /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
-		F8E2DDF01B264561007A1AD4 /* SYNVRAMHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNVRAMHelper.m; sourceTree = "<group>"; };
-		F8E2DDF21B264572007A1AD4 /* SYNVRAMHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYNVRAMHelper.h; sourceTree = "<group>"; };
 		F8EC30941B28245900EF992A /* STPrivilegedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPrivilegedTask.h; sourceTree = "<group>"; };
 		F8EC30951B28245900EF992A /* STPrivilegedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPrivilegedTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,18 +122,41 @@
 				F8E2DDE61B263E9C007A1AD4 /* SecurityInterface.framework in Frameworks */,
 				F8062ACB1B25BC100060BB01 /* libz.dylib in Frameworks */,
 				F8062AC91B25BC010060BB01 /* IOKit.framework in Frameworks */,
+				05DA0C9DCDDFB894405820AF /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F81786A11B2A0D630018360D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F81786AB1B2A0D6D0018360D /* libz.dylib in Frameworks */,
+				F81786AC1B2A0D6E0018360D /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98D9B81D72DA7284F6A7A223 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5A1E5B28B4C311BF36CBE5E0 /* Pods.debug.xcconfig */,
+				CE6C96876505BF48AD021CC7 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F8062A931B25B6B90060BB01 = {
 			isa = PBXGroup;
 			children = (
+				9776ED161B309F030084550B /* Localizable.strings */,
+				F81BF2221B2A0000002B1340 /* Common */,
 				F8062A9E1B25B6B90060BB01 /* DisableDigitalOut */,
+				F81786A51B2A0D630018360D /* DisableDigitalOutHelper */,
 				F8E2DDDB1B2636D6007A1AD4 /* Frameworks */,
 				F8062A9D1B25B6B90060BB01 /* Products */,
+				98D9B81D72DA7284F6A7A223 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				F8062A9C1B25B6B90060BB01 /* DisableDigitalOut.app */,
+				F81786A41B2A0D630018360D /* DisableDigitalOutHelper */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,10 +173,11 @@
 			isa = PBXGroup;
 			children = (
 				F8EEEADA1B27789100F84430 /* Views */,
-				F8EEEADB1B27789F00F84430 /* Patch tools */,
-				F8EEEADC1B2778AE00F84430 /* Categories */,
+				F8EEEADB1B27789F00F84430 /* Root */,
+				F8062AA11B25B6B90060BB01 /* SYAppDelegate.h */,
+				F8062AA21B25B6B90060BB01 /* SYAppDelegate.m */,
 				F8062AA61B25B6B90060BB01 /* Images.xcassets */,
-				F8062AA81B25B6B90060BB01 /* MainMenu.xib */,
+				9776ED091B3099810084550B /* MainMenu.xib */,
 				F8062A9F1B25B6B90060BB01 /* Supporting Files */,
 				F8E2DDE71B2643E3007A1AD4 /* Resources */,
 			);
@@ -110,10 +187,41 @@
 		F8062A9F1B25B6B90060BB01 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9776ED101B309F030084550B /* InfoPlist.strings */,
 				F8062AA01B25B6B90060BB01 /* Info.plist */,
 				F8062AA41B25B6B90060BB01 /* main.m */,
+				9776ED081B3098920084550B /* Localizable.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F81786A51B2A0D630018360D /* DisableDigitalOutHelper */ = {
+			isa = PBXGroup;
+			children = (
+				F81786A61B2A0D630018360D /* main.m */,
+			);
+			path = DisableDigitalOutHelper;
+			sourceTree = "<group>";
+		};
+		F81BF2221B2A0000002B1340 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F81BF2231B2A0034002B1340 /* SYAppleHDAHelper.h */,
+				F81BF2241B2A0034002B1340 /* SYAppleHDAHelper.m */,
+				F81BF2251B2A0034002B1340 /* SYIOKitHelper.h */,
+				F81BF2261B2A0034002B1340 /* SYIOKitHelper.m */,
+				F81BF2271B2A0034002B1340 /* SYNVRAMHelper.h */,
+				F81BF2281B2A0034002B1340 /* SYNVRAMHelper.m */,
+				F81BF22F1B2A003C002B1340 /* NSData+CocoaGitCompression.h */,
+				F81BF2301B2A003C002B1340 /* NSData+CocoaGitCompression.m */,
+				F81BF2311B2A003C002B1340 /* NSError+DisableDigitalOut.h */,
+				F81BF2321B2A003C002B1340 /* NSError+DisableDigitalOut.m */,
+				F829F37C1B2A17E9009B05BC /* SYComms.h */,
+				F829F37D1B2A17E9009B05BC /* SYComms.m */,
+				971516451B59C02E00EC3B06 /* SYCommandLine.h */,
+				971516461B59C02E00EC3B06 /* SYCommandLine.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		F8E2DDDB1B2636D6007A1AD4 /* Frameworks */ = {
@@ -122,6 +230,7 @@
 				F8E2DDE51B263E9C007A1AD4 /* SecurityInterface.framework */,
 				F8062ACA1B25BC100060BB01 /* libz.dylib */,
 				F8062AC81B25BC010060BB01 /* IOKit.framework */,
+				68B33CAF380DB7E6030D1950 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,7 +238,6 @@
 		F8E2DDE71B2643E3007A1AD4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F85247A81B299B3A003F391C /* KextUtilScript.sh */,
 				F8E2DDE81B2643E3007A1AD4 /* check.png */,
 				F8E2DDE91B2643E3007A1AD4 /* check@2x.png */,
 				F8E2DDEC1B2644AA007A1AD4 /* cross.png */,
@@ -141,39 +249,22 @@
 		F8EEEADA1B27789100F84430 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F8062AA11B25B6B90060BB01 /* SYAppDelegate.h */,
-				F8062AA21B25B6B90060BB01 /* SYAppDelegate.m */,
 				F8E2DDDC1B2636F1007A1AD4 /* SYViewController.h */,
 				F8E2DDDD1B2636F1007A1AD4 /* SYViewController.m */,
-				F8E2DDDE1B2636F1007A1AD4 /* SYViewController.xib */,
+				F8E2DDDE1B2636F1007A1AD4 /* SYViewController__.xib */,
+				979574011B400096001617B6 /* SYPatchItemView.h */,
+				979574021B400096001617B6 /* SYPatchItemView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
 		};
-		F8EEEADB1B27789F00F84430 /* Patch tools */ = {
+		F8EEEADB1B27789F00F84430 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				F8062ABF1B25B76F0060BB01 /* SYIOKitHelper.h */,
-				F8062AC01B25B76F0060BB01 /* SYIOKitHelper.m */,
-				F8062AC21B25B9F60060BB01 /* SYAppleHDAHelper.h */,
-				F8062AC31B25B9F60060BB01 /* SYAppleHDAHelper.m */,
-				F8E2DDF21B264572007A1AD4 /* SYNVRAMHelper.h */,
-				F8E2DDF01B264561007A1AD4 /* SYNVRAMHelper.m */,
 				F8EC30941B28245900EF992A /* STPrivilegedTask.h */,
 				F8EC30951B28245900EF992A /* STPrivilegedTask.m */,
 			);
-			name = "Patch tools";
-			sourceTree = "<group>";
-		};
-		F8EEEADC1B2778AE00F84430 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				F8062AC51B25BB760060BB01 /* NSData+CocoaGitCompression.h */,
-				F8062AC61B25BB760060BB01 /* NSData+CocoaGitCompression.m */,
-				F8E2DDD51B263138007A1AD4 /* NSError+DisableDigitalOut.h */,
-				F8E2DDD61B263138007A1AD4 /* NSError+DisableDigitalOut.m */,
-			);
-			name = Categories;
+			name = Root;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,18 +274,39 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8062AB91B25B6B90060BB01 /* Build configuration list for PBXNativeTarget "DisableDigitalOut" */;
 			buildPhases = (
+				B761D35348713FE95554FA51 /* Check Pods Manifest.lock */,
 				F8062A981B25B6B90060BB01 /* Sources */,
 				F8062A991B25B6B90060BB01 /* Frameworks */,
 				F8062A9A1B25B6B90060BB01 /* Resources */,
+				C271D90A5F6B8B3487A44E1E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F870C7271B2A0DDA0041CAF8 /* PBXTargetDependency */,
 			);
 			name = DisableDigitalOut;
 			productName = DisableDigitalOut;
 			productReference = F8062A9C1B25B6B90060BB01 /* DisableDigitalOut.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F81786A31B2A0D630018360D /* DisableDigitalOutHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F81786A81B2A0D630018360D /* Build configuration list for PBXNativeTarget "DisableDigitalOutHelper" */;
+			buildPhases = (
+				F81786A01B2A0D630018360D /* Sources */,
+				F81786A11B2A0D630018360D /* Frameworks */,
+				F81786A21B2A0D630018360D /* CopyFiles */,
+				9776ED131B309F030084550B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DisableDigitalOutHelper;
+			productName = DisableDigitalOutHelper;
+			productReference = F81786A41B2A0D630018360D /* DisableDigitalOutHelper */;
+			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
@@ -203,11 +315,14 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = SY;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Syan;
 				TargetAttributes = {
 					F8062A9B1B25B6B90060BB01 = {
 						CreatedOnToolsVersion = 6.3.2;
+					};
+					F81786A31B2A0D630018360D = {
+						CreatedOnToolsVersion = 7.0;
 					};
 				};
 			};
@@ -218,6 +333,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = F8062A931B25B6B90060BB01;
 			productRefGroup = F8062A9D1B25B6B90060BB01 /* Products */;
@@ -225,54 +341,140 @@
 			projectRoot = "";
 			targets = (
 				F8062A9B1B25B6B90060BB01 /* DisableDigitalOut */,
+				F81786A31B2A0D630018360D /* DisableDigitalOutHelper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9776ED131B309F030084550B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9776ED141B309F030084550B /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F8062A9A1B25B6B90060BB01 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F8E2DDEE1B2644AA007A1AD4 /* cross.png in Resources */,
-				F85247A91B299B3A003F391C /* KextUtilScript.sh in Resources */,
+				9776ED0A1B3099810084550B /* MainMenu.xib in Resources */,
 				F8E2DDEB1B2643E3007A1AD4 /* check@2x.png in Resources */,
 				F8062AA71B25B6B90060BB01 /* Images.xcassets in Resources */,
-				F8E2DDE01B2636F1007A1AD4 /* SYViewController.xib in Resources */,
+				F8E2DDE01B2636F1007A1AD4 /* SYViewController__.xib in Resources */,
+				9776ED061B3098920084550B /* Localizable.strings in Resources */,
 				F8E2DDEF1B2644AA007A1AD4 /* cross@2x.png in Resources */,
 				F8E2DDEA1B2643E3007A1AD4 /* check.png in Resources */,
-				F8062AAA1B25B6B90060BB01 /* MainMenu.xib in Resources */,
+				F8DF5BA01B2A241200BD7C1D /* DisableDigitalOutHelper in Resources */,
+				9776ED0E1B309F030084550B /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B761D35348713FE95554FA51 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C271D90A5F6B8B3487A44E1E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F8062A981B25B6B90060BB01 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F81BF2331B2A003C002B1340 /* NSData+CocoaGitCompression.m in Sources */,
+				F829F37E1B2A17E9009B05BC /* SYComms.m in Sources */,
+				979574031B400096001617B6 /* SYPatchItemView.m in Sources */,
 				F8E2DDDF1B2636F1007A1AD4 /* SYViewController.m in Sources */,
-				F8E2DDD71B263138007A1AD4 /* NSError+DisableDigitalOut.m in Sources */,
-				F8062AC71B25BB760060BB01 /* NSData+CocoaGitCompression.m in Sources */,
-				F8062AC41B25B9F60060BB01 /* SYAppleHDAHelper.m in Sources */,
-				F8E2DDF11B264561007A1AD4 /* SYNVRAMHelper.m in Sources */,
-				F8062AC11B25B76F0060BB01 /* SYIOKitHelper.m in Sources */,
+				F81BF22D1B2A0034002B1340 /* SYNVRAMHelper.m in Sources */,
+				F81BF2291B2A0034002B1340 /* SYAppleHDAHelper.m in Sources */,
 				F8062AA51B25B6B90060BB01 /* main.m in Sources */,
+				F81BF2351B2A003C002B1340 /* NSError+DisableDigitalOut.m in Sources */,
+				F81BF22B1B2A0034002B1340 /* SYIOKitHelper.m in Sources */,
+				971516471B59C02E00EC3B06 /* SYCommandLine.m in Sources */,
 				F8062AA31B25B6B90060BB01 /* SYAppDelegate.m in Sources */,
 				F8EC30961B28245900EF992A /* STPrivilegedTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F81786A01B2A0D630018360D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F829F37F1B2A17F0009B05BC /* SYComms.m in Sources */,
+				F870C72C1B2A0DEB0041CAF8 /* NSError+DisableDigitalOut.m in Sources */,
+				F870C72B1B2A0DEB0041CAF8 /* NSData+CocoaGitCompression.m in Sources */,
+				F870C7291B2A0DEB0041CAF8 /* SYIOKitHelper.m in Sources */,
+				F870C7281B2A0DEB0041CAF8 /* SYAppleHDAHelper.m in Sources */,
+				F870C72A1B2A0DEB0041CAF8 /* SYNVRAMHelper.m in Sources */,
+				F81786A71B2A0D630018360D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F870C7271B2A0DDA0041CAF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F81786A31B2A0D630018360D /* DisableDigitalOutHelper */;
+			targetProxy = F870C7261B2A0DDA0041CAF8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		F8062AA81B25B6B90060BB01 /* MainMenu.xib */ = {
+		9776ED081B3098920084550B /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8062AA91B25B6B90060BB01 /* Base */,
+				9776ED071B3098920084550B /* en */,
+				9776ED0B1B3099890084550B /* fr */,
 			);
-			name = MainMenu.xib;
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		9776ED101B309F030084550B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9776ED0F1B309F030084550B /* fr */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9776ED161B309F030084550B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9776ED151B309F030084550B /* fr */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -299,6 +501,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -359,22 +562,38 @@
 		};
 		F8062ABA1B25B6B90060BB01 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A1E5B28B4C311BF36CBE5E0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = DisableDigitalOut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.syan.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		F8062ABB1B25B6B90060BB01 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE6C96876505BF48AD021CC7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = DisableDigitalOut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.syan.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F81786A91B2A0D630018360D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F81786AA1B2A0D630018360D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -396,6 +615,15 @@
 			buildConfigurations = (
 				F8062ABA1B25B6B90060BB01 /* Debug */,
 				F8062ABB1B25B6B90060BB01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F81786A81B2A0D630018360D /* Build configuration list for PBXNativeTarget "DisableDigitalOutHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F81786A91B2A0D630018360D /* Debug */,
+				F81786AA1B2A0D630018360D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

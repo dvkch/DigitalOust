@@ -1,0 +1,54 @@
+/* No comment provided by engineer. */
+"Backup file absent, can continue" = "Sauvegarde absente, peut poursuivre";
+
+/* No comment provided by engineer. */
+"Backup file is present, revert to it before patching again" = "Sauvegarde présente, veuillez restaurer avant de patcher à nouveau";
+
+/* No comment provided by engineer. */
+"Can't identify outputs list for path %@" = "Impossible d'identifier la liste des sorties pour le chemin %@";
+
+/* No comment provided by engineer. */
+"Card seems fully supported" = "La carte son semble supportée";
+
+/* No comment provided by engineer. */
+"Couldn't find number of outputs" = "Impossible de trouver le nombre de sorties";
+
+/* No comment provided by engineer. */
+"Digital output found in layout file %@" = "Sortie digitale trouvée dans le fichier de disposition %@";
+
+/* No comment provided by engineer. */
+"Digital output wasn't found in layout file %@" = "Sortie digitale introuvable dans le fichier de disposition %@";
+
+/* No comment provided by engineer. */
+"Found %@ outputs in layout file" = "%@ sorties trouvées dans le fichier de disposition";
+
+/* No comment provided by engineer. */
+"Found list of outputs in path file %@" = "Liste des sorties trouvée pour le chemin %@";
+
+/* No comment provided by engineer. */
+"Layout file %@ missing" = "Fichier de disposition %@ introuvable";
+
+/* No comment provided by engineer. */
+"Layout file %@ present" = "Fichier de disposition %@ présent";
+
+/* No comment provided by engineer. */
+"More than 1 path reference in layout file %@" = "Multiples chemins trouvés dans le fichier de disposition %@";
+
+/* No comment provided by engineer. */
+"Number of outputs for layout %@ and path %@ differs (%@ != %@)" = "Nombre de sorties différent pour la disposition %1$@ et le chemin %2$@ (%3$@ ≠ %4$@)";
+
+/* No comment provided by engineer. */
+"Number of outputs for layout %@ and path %@ is the same" = "Nombre de sorties identique pour la disposition %1$@ et le chemin %2$@";
+
+/* Patch aborted */
+"Patch aborted" = "Patch avorté";
+
+/* No comment provided by engineer. */
+"Single path reference found" = "Chemin unique trouvé";
+
+/* No comment provided by engineer. */
+"Sound card not recognized" = "Carte son non reconnue";
+
+/* No comment provided by engineer. */
+"Sound card recognized, layout %@" = "Carte son reconnue, disposition %@";
+
