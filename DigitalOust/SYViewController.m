@@ -17,9 +17,10 @@
 #import "SYComms.h"
 #import "SYPatchItemView.h"
 #import "Masonry.h"
+#import "SYTitleView.h"
 
 @interface SYViewController () <SYCommsDelegate>
-@property (nonatomic, strong) NSTextField *labelTitle;
+@property (nonatomic, strong) SYTitleView *titleView;
 @property (nonatomic, strong) NSTextField *labelMaker;
 @property (nonatomic, strong) SYPatchItemView *patchSupportedSoundCard;
 @property (nonatomic, strong) SYPatchItemView *patchAppleHDAPatch;
@@ -39,21 +40,15 @@
 - (void)loadView
 {
     self.view = [[NSView alloc] init];
-    [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@600);
-        //make.height.greaterThanOrEqualTo(@330);
-    }];
+    [self.view setWantsLayer:YES];
+    [self.view.layer setBackgroundColor:[NSColor colorWithCalibratedWhite:232./255. alpha:1.].CGColor];
+    [self.view.layer setCornerRadius:4.];
     
     __weak SYViewController *wSelf = self;
     
-    self.labelTitle = [[NSTextField alloc] init];
-    [self.view addSubview:self.labelTitle];
-    [self.labelTitle setBordered:NO];
-    [self.labelTitle setEditable:NO];
-    [self.labelTitle setFont:[NSFont fontWithName:@"HelveticaNeue-UltraLight" size:42]];
-    [self.labelTitle setDrawsBackground:NO];
-    [self.labelTitle setStringValue:@"Digital Oust"];
-
+    self.titleView = [[SYTitleView alloc] init];
+    [self.view addSubview:self.titleView];
+    
     
     self.labelMaker = [[NSTextField alloc] init];
     [self.view addSubview:self.labelMaker];
@@ -183,22 +178,25 @@
         }];
     }
     
-    [self.labelTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@18);
-        make.top.equalTo(@18);
-        make.width.equalTo(@330);
-        make.height.equalTo(@50);
+    [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@600);
+    }];
+    
+    [self.titleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@0);
+        make.right.equalTo(@0);
+        make.top.equalTo(@0);
     }];
     
     [self.labelMaker mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(@(-18));
-        make.bottom.equalTo(self.labelTitle);
+        make.bottom.equalTo(self.titleView);
         make.width.equalTo(@80);
         make.height.equalTo(@21);
     }];
     
     [self.labelDonate mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.labelTitle);
+        make.left.equalTo(@18);
         make.right.equalTo(self.labelMaker);
         make.bottom.equalTo(@(-10));
     }];
@@ -208,10 +206,10 @@
         NSView *view = self.patchViews[i];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             if (i == 0)
-                make.top.equalTo(self.labelTitle.mas_bottom).offset(40);
+                make.top.equalTo(self.titleView.mas_bottom).offset(20);
             else
                 make.top.equalTo(((NSView *)self.patchViews[i-1]).mas_bottom).offset(20);
-            make.left.equalTo(self.labelTitle);
+            make.left.equalTo(@18);
             make.right.equalTo(self.labelMaker);
             if (i == self.patchViews.count - 1)
                 make.bottom.equalTo(@(-20));

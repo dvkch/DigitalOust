@@ -26,7 +26,10 @@
     [self.window setContentViewController:self.viewController];
     [self.window.contentView layoutSubtreeIfNeeded];
     [self.window setFrame:(NSRect){{0, 0}, self.window.contentView.frame.size} display:YES];
+    [self.window setMovableByWindowBackground:YES];
     [self.window center];
+    [self.window setOpaque:NO];
+    [self.window setBackgroundColor:[NSColor clearColor]];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender

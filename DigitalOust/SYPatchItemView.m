@@ -74,6 +74,7 @@ static NSImage *imageCross;
     [self.labelDescr setEditable:NO];
     [self.labelDescr setLineBreakMode:NSLineBreakByWordWrapping];
     [self.labelDescr setDrawsBackground:NO];
+    [self.labelDescr setTextColor:[NSColor darkGrayColor]];
     [self addSubview:self.labelDescr];
     
     self.imageView = [[NSImageView alloc] init];

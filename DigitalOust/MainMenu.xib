@@ -109,8 +109,8 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="DigitalOust" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" unifiedTitleAndToolbar="YES"/>
+        <window title="Digital Oust" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" closable="YES" unifiedTitleAndToolbar="YES"/>
             <rect key="contentRect" x="335" y="390" width="500" height="330"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="EiT-Mj-1SZ">
@@ -118,7 +118,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <animations/>
             </view>
-            <point key="canvasLocation" x="429" y="168"/>
+            <point key="canvasLocation" x="203" y="115"/>
         </window>
     </objects>
 </document>
