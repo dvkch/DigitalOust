@@ -9,29 +9,34 @@
 #import <Foundation/Foundation.h>
 
 typedef enum : NSUInteger {
-    SYCommsCommandLog                   = 0,
-    SYCommsCommandSetKextDevMode        = 1,
-    SYCommsCommandSetRootless           = 2,
-    SYCommsCommandPatchAppleHDA         = 3,
-    SYCommsCommandRestoreAppleHDA       = 4,
-    SYCommsCommandUpdateParentProcessID = 5,
+    SYCommsCommandLog                                   = 0,
+    SYCommsCommandEnableKextDevMode                     = 1,
+    SYCommsCommandDisableKextDevMode                    = 2,
+    SYCommsCommandEnableRootless                        = 3,
+    SYCommsCommandDisableRootless                       = 4,
+    SYCommsCommandEnableKextDevModeAndDisableRootless   = 5,
+    SYCommsCommandPatchAppleHDA                         = 6,
+    SYCommsCommandRestoreAppleHDA                       = 7,
+    SYCommsCommandUpdateParentProcessID                 = 8,
 } SYCommsCommand;
 
 @class SYComms;
 
 @protocol SYCommsDelegate <NSObject>
-- (void)comms:(SYComms *)comms receivedCommand:(SYCommsCommand)command arguments:(NSDictionary *)arguments;
-- (void)comms:(SYComms *)comms receivedSuccessForCommand:(SYCommsCommand)command;
-- (void)comms:(SYComms *)comms receivedErrorForCommand:(SYCommsCommand)command error:(NSError *)error;
+- (void)comms:(SYComms *)comms
+receivedCommand:(SYCommsCommand)command
+    commandID:(NSString *)commandID
+    arguments:(NSDictionary *)arguments;
 @end
+
+typedef void(^SYCommsCompletionBlock)(NSError *error);
 
 @interface SYComms : NSObject
 
 + (SYComms *)shared;
 - (void)setIdentifier:(NSString *)identifier delegate:(id<SYCommsDelegate>)delegate;
 
-- (void)sendCommand:(SYCommsCommand)command args:(NSDictionary *)args;
-- (void)sendSuccessForCommand:(SYCommsCommand)command;
-- (void)sendError:(NSError *)error forCommand:(SYCommsCommand)command;
+- (void)sendCommand:(SYCommsCommand)command args:(NSDictionary *)args completion:(SYCommsCompletionBlock)completion;
+- (void)sendCompletionForCommandID:(NSString *)commandID error:(NSError *)error;
 
 @end

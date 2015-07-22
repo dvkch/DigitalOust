@@ -15,8 +15,9 @@ typedef enum : NSUInteger {
 } SYCommsType;
 
 @interface SYComms ()
-@property (atomic, copy) NSString *identifier;
-@property (atomic, weak) id<SYCommsDelegate> delegate;
+@property (atomic, copy)    NSString            *identifier;
+@property (atomic, weak)    id<SYCommsDelegate> delegate;
+@property (atomic, strong)  NSMutableDictionary *completionBlocks;
 - (void)receivedMessage:(NSDictionary *)message;
 @end
 
@@ -46,6 +47,7 @@ static void SYCommsCallback(CFNotificationCenterRef center,
     self = [super init];
     if (self)
     {
+        self.completionBlocks = [NSMutableDictionary dictionary];
         CFNotificationCenterAddObserver(CFNotificationCenterGetDistributedCenter(),
                                         NULL,
                                         SYCommsCallback,
@@ -54,6 +56,14 @@ static void SYCommsCallback(CFNotificationCenterRef center,
                                         CFNotificationSuspensionBehaviorDeliverImmediately);
     }
     return self;
+}
+
+- (void)callCompletionBlockForCommanID:(NSString *)commandID withError:(NSError *)error
+{
+    SYCommsCompletionBlock block = self.completionBlocks[commandID];
+    if (block)
+        block(error);
+    [self.completionBlocks removeObjectForKey:commandID];
 }
 
 - (void)receivedMessage:(NSDictionary *)message
@@ -73,20 +83,18 @@ static void SYCommsCallback(CFNotificationCenterRef center,
         case SYCommsTypeCommand:
         {
             SYCommsCommand command = [content[@"command"] integerValue];
-            [self.delegate comms:self receivedCommand:command arguments:content[@"args"]];
+            [self.delegate comms:self receivedCommand:command commandID:content[@"cmdid"] arguments:content[@"args"]];
             break;
         }
         case SYCommsTypeError:
         {
             NSError *error = [NSKeyedUnarchiver unarchiveObjectWithData:content[@"error"]];
-            SYCommsCommand command = [content[@"command"] integerValue];
-            [self.delegate comms:self receivedErrorForCommand:command error:error];
+            [self callCompletionBlockForCommanID:content[@"cmdid"] withError:error];
             break;
         }
         case SYCommsTypeSuccess:
         {
-            SYCommsCommand command = [content[@"command"] integerValue];
-            [self.delegate comms:self receivedSuccessForCommand:command];
+            [self callCompletionBlockForCommanID:content[@"cmdid"] withError:nil];
             break;
         }
     }
@@ -120,19 +128,27 @@ static void SYCommsCallback(CFNotificationCenterRef center,
     self.delegate   = delegate;
 }
 
-- (void)sendCommand:(SYCommsCommand)command args:(NSDictionary *)args
+- (void)sendCommand:(SYCommsCommand)command args:(NSDictionary *)args completion:(void (^)(NSError *))completion
 {
-    [self sendMessage:@{@"type":@(SYCommsTypeCommand), @"command":@(command), @"args":(args ?: @{})}];
+    NSString *commandID = [[NSUUID UUID] UUIDString];
+    if (completion)
+        [self.completionBlocks setObject:[completion copy] forKey:commandID];
+    
+    [self sendMessage:@{@"type":@(SYCommsTypeCommand),
+                        @"command":@(command),
+                        @"cmdid":commandID,
+                        @"args":(args ?: @{})}];
 }
 
-- (void)sendSuccessForCommand:(SYCommsCommand)command
+- (void)sendCompletionForCommandID:(NSString *)commandID error:(NSError *)error
 {
-    [self sendMessage:@{@"type":@(SYCommsTypeSuccess), @"command":@(command)}];
-}
-
-- (void)sendError:(NSError *)error forCommand:(SYCommsCommand)command
-{
-    [self sendMessage:@{@"type":@(SYCommsTypeError), @"command":@(command), @"error":[NSKeyedArchiver archivedDataWithRootObject:error]}];
+    if (error)
+        [self sendMessage:@{@"type":@(SYCommsTypeError),
+                            @"cmdid":commandID,
+                            @"error":[NSKeyedArchiver archivedDataWithRootObject:error]}];
+    else
+        [self sendMessage:@{@"type":@(SYCommsTypeSuccess),
+                            @"cmdid":commandID}];
 }
 
 @end

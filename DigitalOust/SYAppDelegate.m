@@ -16,6 +16,11 @@
 
 @implementation SYAppDelegate
 
++ (instancetype)obtain
+{
+    return (SYAppDelegate *)[NSApp delegate];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:@"NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints"];
@@ -30,11 +35,21 @@
     [self.window center];
     [self.window setOpaque:NO];
     [self.window setBackgroundColor:[NSColor clearColor]];
+
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self selector:@selector(windowDidChangeFocus:) name:NSWindowDidBecomeKeyNotification object:self.window];
+    [nc addObserver:self selector:@selector(windowDidChangeFocus:) name:NSWindowDidResignKeyNotification object:self.window];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
 {
     return YES;
+}
+
+- (void)windowDidChangeFocus:(NSNotification *)notification
+{
+    if (self.windowFocusChanged)
+        self.windowFocusChanged();
 }
 
 @end

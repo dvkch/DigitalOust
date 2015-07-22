@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F81786A31B2A0D630018360D"
-               BuildableName = "DigitalOust"
+               BuildableName = "DigitalOustHelper"
                BlueprintName = "DigitalOustHelper"
                ReferencedContainer = "container:DigitalOust.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F81786A31B2A0D630018360D"
-            BuildableName = "DigitalOust"
+            BuildableName = "DigitalOustHelper"
             BlueprintName = "DigitalOustHelper"
             ReferencedContainer = "container:DigitalOust.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F81786A31B2A0D630018360D"
-            BuildableName = "DigitalOust"
+            BuildableName = "DigitalOustHelper"
             BlueprintName = "DigitalOustHelper"
             ReferencedContainer = "container:DigitalOust.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F81786A31B2A0D630018360D"
-            BuildableName = "DigitalOust"
+            BuildableName = "DigitalOustHelper"
             BlueprintName = "DigitalOustHelper"
             ReferencedContainer = "container:DigitalOust.xcodeproj">
          </BuildableReference>

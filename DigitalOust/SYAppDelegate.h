@@ -10,5 +10,9 @@
 
 @interface SYAppDelegate : NSObject <NSApplicationDelegate>
 
++ (instancetype)obtain;
+
+@property (atomic, copy) void(^windowFocusChanged)(void);
+
 @end
 

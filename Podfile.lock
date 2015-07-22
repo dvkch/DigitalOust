@@ -1,10 +1,13 @@
 PODS:
+  - JESCircularProgressView (0.0.3)
   - Masonry (0.6.2)
 
 DEPENDENCIES:
+  - JESCircularProgressView
   - Masonry
 
 SPEC CHECKSUMS:
+  JESCircularProgressView: 8cdadf9573c859c4927756b1607b1e0abeecfc19
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
 
-COCOAPODS: 0.38.0.beta.1
+COCOAPODS: 0.38.0

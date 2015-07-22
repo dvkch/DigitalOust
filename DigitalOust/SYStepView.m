@@ -1,27 +1,29 @@
 //
-//  SYPatchItemView.m
+//  SYStepView.m
 //  DigitalOust
 //
 //  Created by Stan Chevallier on 28/06/2015.
 //  Copyright © 2015 Syan. All rights reserved.
 //
 
-#import "SYPatchItemView.h"
+#import "SYStepView.h"
+#import "SYStep.h"
+#import "JESCircularProgressView.h"
 #import "Masonry.h"
 
 static NSImage *imageCheck;
 static NSImage *imageCross;
 
-@interface SYPatchItemView ()
+@interface SYStepView ()
 @property (nonatomic, strong) NSTextField *labelTitle;
 @property (nonatomic, strong) NSTextField *labelDescr;
+@property (nonatomic, strong) NSTextField *labelNumber;
 @property (nonatomic, strong) NSImageView *imageView;
+@property (nonatomic, strong) JESCircularProgressView *progressView;
 @property (nonatomic, strong) NSButton *button;
-@property (nonatomic, strong) NSMutableDictionary *dicTitles;
-@property (nonatomic, strong) NSMutableDictionary *dicButtons;
 @end
 
-@implementation SYPatchItemView
+@implementation SYStepView
 
 #pragma mark - Init
 
@@ -59,9 +61,6 @@ static NSImage *imageCross;
     
     [self setWantsLayer:YES];
     
-    self.dicTitles  = [NSMutableDictionary dictionary];
-    self.dicButtons = [NSMutableDictionary dictionary];
-    
     self.labelTitle = [[NSTextField alloc] init];
     [self.labelTitle setBordered:NO];
     [self.labelTitle setEditable:NO];
@@ -82,21 +81,18 @@ static NSImage *imageCross;
     [self.imageView setImageAlignment:NSImageAlignCenter];
     [self addSubview:self.imageView];
     
+    self.progressView = [[JESCircularProgressView alloc] init];
+    [self.progressView setTintColor:[NSColor grayColor]];
+    [self.progressView setProgressLineWidth:10.];
+    [self.progressView setOuterLineWidth:3.];
+    
     self.button = [[NSButton alloc] init];
     [self.button setButtonType:NSMomentaryPushInButton];
     [self.button setBezelStyle:NSRoundedBezelStyle];
     [self.button setTarget:self];
     [self.button setAction:@selector(buttonTap:)];
     [self addSubview:self.button];
-    /*
-    self.buttonDescr = [[NSButton alloc] init];
-    [self.buttonDescr setButtonType:NSPushOnPushOffButton];
-    [self.buttonDescr setBezelStyle:NSDisclosureBezelStyle];
-    [self.buttonDescr setTitle:@""];
-    [self.buttonDescr setTarget:self];
-    [self.buttonDescr setAction:@selector(buttonDescrTap:)];
-    [self addSubview:self.buttonDescr];
-    */
+    
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.equalTo(@22);
         make.left.equalTo(@0);
@@ -117,35 +113,25 @@ static NSImage *imageCross;
         make.height.equalTo(@20);
     }];
     
-    [self.labelDescr mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.imageView.mas_left);
-        make.right.equalTo(self.button.mas_right);
-        make.top.equalTo(self.labelTitle.mas_bottom).offset(6);
-        make.bottom.equalTo(@0);
-    }];
-    
+    [self updateConstraints];
     [self layoutSubtreeIfNeeded];
     [self updateState];
 }
 
 #pragma mark - Properties
 
-- (void)setTitleText:(NSString *)title forState:(NSString *)state
+- (void)updateConstraints
 {
-    [self.dicTitles setObject:(title ?: [NSNull null]) forKey:state];
-    [self updateState];
-}
-
-- (void)setButtonText:(NSString *)title forState:(NSString *)state
-{
-    [self.dicButtons setObject:(title ?: [NSNull null]) forKey:state];
-    [self updateState];
-}
-
-- (void)setDescrText:(NSString *)descrText
-{
-    self->_descrText = descrText;
-    [self updateState];
+    [super updateConstraints];
+    [self.labelDescr mas_remakeConstraints:^(MASConstraintMaker *make) {
+        BOOL hasContent = (self.labelDescr.stringValue.length != 0);
+        make.top.equalTo(self.labelTitle.mas_bottom).offset(hasContent ? 6 : 0);
+        make.bottom.equalTo(@0);
+        make.left.equalTo(@0);
+        make.right.equalTo(@0);
+        if (!hasContent)
+            make.height.equalTo(@0);
+    }];
 }
 
 - (void)setButtonEnabled:(BOOL)buttonEnabled
@@ -154,38 +140,57 @@ static NSImage *imageCross;
     [self.button setEnabled:buttonEnabled];
 }
 
-#pragma mark - Layout
-
-- (CGFloat)descrTextHeight
+- (void)setStep:(SYStep *)step
 {
-    CGFloat descrW = CGRectGetWidth(self.labelDescr.frame);
-    NSSize descrS = [self.labelDescr.attributedStringValue
-                     boundingRectWithSize:NSMakeSize(descrW, CGFLOAT_MAX)
-                     options:NSStringDrawingUsesLineFragmentOrigin].size;
-    return descrS.height;
+    [self.step setProgressBlock:nil];
+    [self.step setUpdatedBlock:nil];
+    
+    self->_step = step;
+    [self updateState];
+    
+    __weak SYStepView *wSelf = self;
+    [step setProgressBlock:^(CGFloat progress) {
+        [wSelf.progressView setProgress:progress animated:YES];
+    }];
+    [step setUpdatedBlock:^{
+        [wSelf updateState];
+    }];
 }
 
 #pragma mark - State
 
 - (void)updateState
 {
-    if(!self.determineStateBlock)
+    if(!self.step)
         return;
     
-    NSString *state = self.determineStateBlock();
+    switch ([self.step image]) {
+        case SYStepImageOK:
+            [self.imageView setHidden:NO];
+            [self.imageView setImage:imageCheck];
+            [self.progressView setHidden:YES];
+            break;
+        case SYStepImageNotOK:
+            [self.imageView setHidden:NO];
+            [self.imageView setImage:imageCross];
+            [self.progressView setHidden:YES];
+            break;
+        case SYStepImageProgressDetermined:
+            [self.imageView setHidden:YES];
+            [self.progressView setHidden:NO];
+            break;
+        case SYStepImageProgressUndetermined:
+            [self.imageView setHidden:YES];
+            [self.progressView setHidden:NO];
+            break;
+    }
     
-    if (self.useSuccessImageForStateBlock)
-        [self.imageView setImage:(self.useSuccessImageForStateBlock(state) ? imageCheck : imageCross)];
+    [self.labelTitle setStringValue:[self.step titleText] ?: @""];
+    [self.labelDescr setStringValue:[self.step descrText] ?: @""];
     
-    NSString *title = [self.dicTitles objectForKey:state];
-    [self.labelTitle setStringValue:title];
-    
-    NSString *button = [self.dicButtons objectForKey:@"all"] ?: [self.dicButtons objectForKey:state];
-    [self.button setHidden:[button isEqualTo:[NSNull null]]];
-    if(![button isEqualTo:[NSNull null]])
-        [self.button setTitle:(button ?: @"")];
-    
-    [self.labelDescr setStringValue:(self.descrText ?: @"")];
+    NSString *buttonText = [self.step buttonText];
+    [self.button setHidden:buttonText ? NO : YES];
+    [self.button setTitle:buttonText ?: @""];
     
     [self setNeedsUpdateConstraints:YES];
 }
@@ -194,8 +199,7 @@ static NSImage *imageCross;
 
 - (void)buttonTap:(id)sender
 {
-    if (self.buttonTappedBlock)
-        self.buttonTappedBlock();
+    [self.step buttonTap:self.window];
 }
 
 @end

@@ -57,35 +57,39 @@ int main(int argc, const char * argv[])
 
 @implementation SYAgentCommsReceiver
 
-- (void)comms:(SYComms *)comms receivedCommand:(SYCommsCommand)command arguments:(NSDictionary *)arguments
+- (void)comms:(SYComms *)comms
+receivedCommand:(SYCommsCommand)command
+    commandID:(NSString *)commandID
+    arguments:(NSDictionary *)arguments
 {
-    if(command == SYCommsCommandSetKextDevMode)
+    if(command == SYCommsCommandEnableKextDevModeAndDisableRootless)
     {
         NSError *error;
-        [SYNVRAMHelper setKextDevModeEnabled:[arguments[@"enabled"] boolValue] error:&error];
-        if(error)
-            [[SYComms shared] sendError:error forCommand:command];
-        else
-            [[SYComms shared] sendSuccessForCommand:command];
+        [SYNVRAMHelper setKextDevModeEnabled:YES error:&error];
+        if (!error)
+            [SYNVRAMHelper setRootlessEnabled:NO error:&error];
+        
+        [[SYComms shared] sendCompletionForCommandID:commandID error:error];
     }
-    else if(command == SYCommsCommandSetRootless)
+    else if(command == SYCommsCommandEnableKextDevMode || command == SYCommsCommandDisableKextDevMode)
     {
         NSError *error;
-        [SYNVRAMHelper setRootlessEnabled:[arguments[@"enabled"] boolValue] error:&error];
-        if(error)
-            [[SYComms shared] sendError:error forCommand:command];
-        else
-            [[SYComms shared] sendSuccessForCommand:command];
+        [SYNVRAMHelper setKextDevModeEnabled:(command == SYCommsCommandEnableKextDevMode) error:&error];
+        [[SYComms shared] sendCompletionForCommandID:commandID error:error];
+    }
+    else if(command == SYCommsCommandEnableRootless || command == SYCommsCommandDisableRootless)
+    {
+        NSError *error;
+        [SYNVRAMHelper setRootlessEnabled:(command == SYCommsCommandEnableRootless) error:&error];
+        [[SYComms shared] sendCompletionForCommandID:commandID error:error];
     }
     else if(command == SYCommsCommandRestoreAppleHDA)
     {
         [SYAppleHDAHelper restoreOriginalFile:^(NSString *output, NSError *error, BOOL completed) {
             if(!completed)
-                [[SYComms shared] sendCommand:SYCommsCommandLog args:@{@"log":output}];
-            else if(error)
-                [[SYComms shared] sendError:error forCommand:command];
+                [[SYComms shared] sendCommand:SYCommsCommandLog args:@{@"log":output} completion:nil];
             else
-                [[SYComms shared] sendSuccessForCommand:command];
+                [[SYComms shared] sendCompletionForCommandID:commandID error:error];
         }];
     }
     else if (command == SYCommsCommandPatchAppleHDA)
@@ -93,28 +97,16 @@ int main(int argc, const char * argv[])
         NSNumber *layoutID = arguments[@"layoutid"];
         [SYAppleHDAHelper applyPatchForLayout:layoutID block:^(NSString *output, NSError *error, BOOL completed) {
             if(!completed)
-                [[SYComms shared] sendCommand:SYCommsCommandLog args:@{@"log":output}];
-            else if(error)
-                [[SYComms shared] sendError:error forCommand:command];
+                [[SYComms shared] sendCommand:SYCommsCommandLog args:@{@"log":output} completion:nil];
             else
-                [[SYComms shared] sendSuccessForCommand:command];
+                [[SYComms shared] sendCompletionForCommandID:commandID error:error];
         }];
     }
     else if (command == SYCommsCommandUpdateParentProcessID)
     {
         appPID = arguments[@"pid"];
-        [[SYComms shared] sendSuccessForCommand:SYCommsCommandUpdateParentProcessID];
+        [[SYComms shared] sendCompletionForCommandID:commandID error:nil];
     }
-}
-
-- (void)comms:(SYComms *)comms receivedSuccessForCommand:(SYCommsCommand)command
-{
-    
-}
-
-- (void)comms:(SYComms *)comms receivedErrorForCommand:(SYCommsCommand)command error:(NSError *)error
-{
-    
 }
 
 @end
