@@ -15,11 +15,14 @@
 #import "SYStepPatch1.h"
 #import "SYStepPatch2.h"
 #import "SYStepPatch3.h"
+#import "SYStepRestore0.h"
+#import "SYStepRestore1.h"
+#import "SYStepRestore2.h"
 #import "Masonry.h"
 #import "SYTitleView.h"
 #import "SYAppDelegate.h"
 #import "NSError+DigitalOust.h"
-#import "NSWindow+Alerts.h"
+#import "NSWindow+Tools.h"
 
 @interface SYViewController () <SYCommsDelegate>
 @property (nonatomic, strong) SYTitleView           *titleView;
@@ -62,12 +65,25 @@
     }
     self.stepViewsPatch = [stepViewsPatch copy];
     
+    NSMutableArray *stepViewsRestore = [NSMutableArray array];
+    for (int i = 0; i < 3; ++i)
+    {
+        Class stepClass = NSClassFromString([NSString stringWithFormat:@"SYStepRestore%d", i]);
+        SYStep *step = [[stepClass alloc] init];
+        if (![step show])
+            continue;
+        [step setStepNumber:i];
+        SYStepView *stepView = [[SYStepView alloc] init];
+        [stepView setStep:step];
+        [stepViewsRestore addObject:stepView];
+    }
+    self.stepViewsRestore = [stepViewsRestore copy];
+    
     self.segmentedControl = [[NSSegmentedControl alloc] init];
     [self.segmentedControl setSegmentCount:2];
     [self.segmentedControl setSegmentStyle:NSSegmentStyleRoundRect];
     [self.segmentedControl setLabel:@"Patch"    forSegment:0];
     [self.segmentedControl setLabel:@"Restore"  forSegment:1];
-    [self.segmentedControl setSelectedSegment:0];
     [self.segmentedControl setTarget:self];
     [self.segmentedControl setAction:@selector(segmentedControlTap:)];
     [self.view addSubview:self.segmentedControl];
@@ -151,6 +167,8 @@
 
 - (void)openTab:(NSUInteger)tab
 {
+    [self.segmentedControl setSelectedSegment:tab];
+    
     [self.stepViewsPatch   makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.stepViewsRestore makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
@@ -191,7 +209,7 @@
 - (void)updateBackgroundColor
 {
     BOOL active = (!self.view.window || self.view.window.isKeyWindow);
-    [self.view.layer setBackgroundColor:[NSColor colorWithCalibratedWhite:(active ? 232. : 246.)/255. alpha:1.].CGColor];
+    [self.view.layer setBackgroundColor:[NSWindow defaultBackgroundColor:active].CGColor];
 }
 
 - (void)updateItems

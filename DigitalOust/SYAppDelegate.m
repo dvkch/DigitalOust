@@ -23,7 +23,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:@"NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints"];
+    [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:@"NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [NSApp activateIgnoringOtherApps:YES];
@@ -35,6 +35,9 @@
     [self.window center];
     [self.window setOpaque:NO];
     [self.window setBackgroundColor:[NSColor clearColor]];
+    
+    //[self.window.contentView setContentHuggingPriority:550 forOrientation:NSLayoutConstraintOrientationVertical];
+    //[self.window.contentView setContentHuggingPriority:550 forOrientation:NSLayoutConstraintOrientationHorizontal];
 
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(windowDidChangeFocus:) name:NSWindowDidBecomeKeyNotification object:self.window];

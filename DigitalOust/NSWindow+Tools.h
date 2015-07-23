@@ -1,5 +1,5 @@
 //
-//  NSWindow+Alerts.h
+//  NSWindow+Tools.h
 //  DigitalOust
 //
 //  Created by Stan Chevallier on 22/07/2015.
@@ -8,7 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface NSWindow (Alerts)
+@interface NSWindow (Tools)
+
++ (NSColor *)defaultBackgroundColor:(BOOL)active;
 
 - (void)displayAlertWithTitle:(NSString *)title
               informativeText:(NSString *)informativeText;

@@ -1,18 +1,18 @@
 //
-//  SYStepPatch1.m
+//  SYStepRestore0.m
 //  DigitalOust
 //
 //  Created by Stan Chevallier on 22/07/2015.
 //  Copyright © 2015 Syan. All rights reserved.
 //
 
-#import "SYStepPatch1.h"
+#import "SYStepRestore0.h"
 #import "SYNVRAMHelper.h"
 #import "SYComms.h"
 #import "NSWindow+Tools.h"
 #import "NSError+DigitalOust.h"
 
-@implementation SYStepPatch1
+@implementation SYStepRestore0
 
 - (NSString *)state
 {

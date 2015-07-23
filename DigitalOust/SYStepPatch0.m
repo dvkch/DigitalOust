@@ -9,7 +9,7 @@
 #import "SYStepPatch0.h"
 #import "SYIOKitHelper.h"
 #import "SYAppleHDAHelper.h"
-#import "NSWindow+Alerts.h"
+#import "NSWindow+Tools.h"
 
 @implementation SYStepPatch0
 

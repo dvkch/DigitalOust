@@ -1,15 +1,20 @@
 //
-//  NSWindow+Alerts.m
+//  NSWindow+Tools.m
 //  DigitalOust
 //
 //  Created by Stan Chevallier on 22/07/2015.
 //  Copyright © 2015 Syan. All rights reserved.
 //
 
-#import "NSWindow+Alerts.h"
+#import "NSWindow+Tools.h"
 #import "SYReboot.h"
 
-@implementation NSWindow (Alerts)
+@implementation NSWindow (Tools)
+
++ (NSColor *)defaultBackgroundColor:(BOOL)active
+{
+    return [NSColor colorWithCalibratedWhite:(active ? 232. : 246.)/255. alpha:1.];
+}
 
 - (void)displayAlertWithTitle:(NSString *)title
               informativeText:(NSString *)informativeText

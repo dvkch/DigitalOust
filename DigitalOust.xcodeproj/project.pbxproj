@@ -10,13 +10,18 @@
 		05DA0C9DCDDFB894405820AF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B33CAF380DB7E6030D1950 /* libPods.a */; };
 		971516471B59C02E00EC3B06 /* SYReboot.m in Sources */ = {isa = PBXBuildFile; fileRef = 971516461B59C02E00EC3B06 /* SYReboot.m */; };
 		9742FAE11B5F7B7700D32020 /* SYStepPatch0.m in Sources */ = {isa = PBXBuildFile; fileRef = 9742FAE01B5F7B7700D32020 /* SYStepPatch0.m */; };
+		97650DA51B6115530065C677 /* SYStepRestore0.m in Sources */ = {isa = PBXBuildFile; fileRef = 97650DA01B6115530065C677 /* SYStepRestore0.m */; };
+		97650DA61B6115530065C677 /* SYStepRestore1.m in Sources */ = {isa = PBXBuildFile; fileRef = 97650DA21B6115530065C677 /* SYStepRestore1.m */; };
+		97650DA71B6115530065C677 /* SYStepRestore2.m in Sources */ = {isa = PBXBuildFile; fileRef = 97650DA41B6115530065C677 /* SYStepRestore2.m */; };
 		9776ED061B3098920084550B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9776ED081B3098920084550B /* Localizable.strings */; };
 		9776ED0A1B3099810084550B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9776ED091B3099810084550B /* MainMenu.xib */; };
 		9776ED0E1B309F030084550B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9776ED101B309F030084550B /* InfoPlist.strings */; };
 		9776ED141B309F030084550B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9776ED161B309F030084550B /* Localizable.strings */; };
 		9779FF561B5EB3A500BDEB29 /* SYKextHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9779FF551B5EB3A500BDEB29 /* SYKextHelper.m */; };
+		978766451B60D41D00556E36 /* NSAttributedString+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 978766441B60D41D00556E36 /* NSAttributedString+Tools.m */; };
+		978766481B60E0E100556E36 /* NSColor+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 978766471B60E0E100556E36 /* NSColor+Tools.m */; };
 		979574031B400096001617B6 /* SYStepView.m in Sources */ = {isa = PBXBuildFile; fileRef = 979574021B400096001617B6 /* SYStepView.m */; };
-		97C9387E1B5FF9DC00EFBD6A /* NSWindow+Alerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C9387D1B5FF9DC00EFBD6A /* NSWindow+Alerts.m */; };
+		97C9387E1B5FF9DC00EFBD6A /* NSWindow+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C9387D1B5FF9DC00EFBD6A /* NSWindow+Tools.m */; };
 		97C938821B5FFAE100EFBD6A /* SYStepPatch1.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C938811B5FFAE100EFBD6A /* SYStepPatch1.m */; };
 		97C938851B600E5C00EFBD6A /* SYStepPatch3.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C938841B600E5C00EFBD6A /* SYStepPatch3.m */; };
 		97EA19881B5C430B00635783 /* SYTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EA19871B5C430B00635783 /* SYTitleView.m */; };
@@ -104,6 +109,12 @@
 		971516461B59C02E00EC3B06 /* SYReboot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYReboot.m; sourceTree = "<group>"; };
 		9742FADF1B5F7B7700D32020 /* SYStepPatch0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYStepPatch0.h; sourceTree = "<group>"; };
 		9742FAE01B5F7B7700D32020 /* SYStepPatch0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYStepPatch0.m; sourceTree = "<group>"; };
+		97650D9F1B6115530065C677 /* SYStepRestore0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYStepRestore0.h; sourceTree = "<group>"; };
+		97650DA01B6115530065C677 /* SYStepRestore0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYStepRestore0.m; sourceTree = "<group>"; };
+		97650DA11B6115530065C677 /* SYStepRestore1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYStepRestore1.h; sourceTree = "<group>"; };
+		97650DA21B6115530065C677 /* SYStepRestore1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYStepRestore1.m; sourceTree = "<group>"; };
+		97650DA31B6115530065C677 /* SYStepRestore2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYStepRestore2.h; sourceTree = "<group>"; };
+		97650DA41B6115530065C677 /* SYStepRestore2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYStepRestore2.m; sourceTree = "<group>"; };
 		9776ED071B3098920084550B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9776ED091B3099810084550B /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		9776ED0B1B3099890084550B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -111,10 +122,14 @@
 		9776ED151B309F030084550B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9779FF541B5EB3A500BDEB29 /* SYKextHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYKextHelper.h; sourceTree = "<group>"; };
 		9779FF551B5EB3A500BDEB29 /* SYKextHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYKextHelper.m; sourceTree = "<group>"; };
+		978766431B60D41D00556E36 /* NSAttributedString+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Tools.h"; sourceTree = "<group>"; };
+		978766441B60D41D00556E36 /* NSAttributedString+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Tools.m"; sourceTree = "<group>"; };
+		978766461B60E0E100556E36 /* NSColor+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+Tools.h"; sourceTree = "<group>"; };
+		978766471B60E0E100556E36 /* NSColor+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Tools.m"; sourceTree = "<group>"; };
 		979574011B400096001617B6 /* SYStepView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYStepView.h; sourceTree = "<group>"; };
 		979574021B400096001617B6 /* SYStepView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYStepView.m; sourceTree = "<group>"; };
-		97C9387C1B5FF9DC00EFBD6A /* NSWindow+Alerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+Alerts.h"; sourceTree = "<group>"; };
-		97C9387D1B5FF9DC00EFBD6A /* NSWindow+Alerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+Alerts.m"; sourceTree = "<group>"; };
+		97C9387C1B5FF9DC00EFBD6A /* NSWindow+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+Tools.h"; sourceTree = "<group>"; };
+		97C9387D1B5FF9DC00EFBD6A /* NSWindow+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+Tools.m"; sourceTree = "<group>"; };
 		97C938801B5FFAE100EFBD6A /* SYStepPatch1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYStepPatch1.h; sourceTree = "<group>"; };
 		97C938811B5FFAE100EFBD6A /* SYStepPatch1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYStepPatch1.m; sourceTree = "<group>"; };
 		97C938831B600E5C00EFBD6A /* SYStepPatch3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYStepPatch3.h; sourceTree = "<group>"; };
@@ -210,11 +225,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97650D9E1B6114CA0065C677 /* Patch */ = {
+			isa = PBXGroup;
+			children = (
+				9742FADF1B5F7B7700D32020 /* SYStepPatch0.h */,
+				9742FAE01B5F7B7700D32020 /* SYStepPatch0.m */,
+				97C938801B5FFAE100EFBD6A /* SYStepPatch1.h */,
+				97C938811B5FFAE100EFBD6A /* SYStepPatch1.m */,
+				97EA1A101B5D798600635783 /* SYStepPatch2.h */,
+				97EA1A111B5D798600635783 /* SYStepPatch2.m */,
+				97C938831B600E5C00EFBD6A /* SYStepPatch3.h */,
+				97C938841B600E5C00EFBD6A /* SYStepPatch3.m */,
+			);
+			name = Patch;
+			sourceTree = "<group>";
+		};
+		97650DA81B6115570065C677 /* Restore */ = {
+			isa = PBXGroup;
+			children = (
+				97650D9F1B6115530065C677 /* SYStepRestore0.h */,
+				97650DA01B6115530065C677 /* SYStepRestore0.m */,
+				97650DA11B6115530065C677 /* SYStepRestore1.h */,
+				97650DA21B6115530065C677 /* SYStepRestore1.m */,
+				97650DA31B6115530065C677 /* SYStepRestore2.h */,
+				97650DA41B6115530065C677 /* SYStepRestore2.m */,
+			);
+			name = Restore;
+			sourceTree = "<group>";
+		};
 		97C9387F1B5FF9DF00EFBD6A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				97C9387C1B5FF9DC00EFBD6A /* NSWindow+Alerts.h */,
-				97C9387D1B5FF9DC00EFBD6A /* NSWindow+Alerts.m */,
+				97C9387C1B5FF9DC00EFBD6A /* NSWindow+Tools.h */,
+				97C9387D1B5FF9DC00EFBD6A /* NSWindow+Tools.m */,
+				978766431B60D41D00556E36 /* NSAttributedString+Tools.h */,
+				978766441B60D41D00556E36 /* NSAttributedString+Tools.m */,
+				978766461B60E0E100556E36 /* NSColor+Tools.h */,
+				978766471B60E0E100556E36 /* NSColor+Tools.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -261,14 +308,8 @@
 			children = (
 				97EA1A0C1B5D745F00635783 /* SYStep.h */,
 				97EA1A0D1B5D745F00635783 /* SYStep.m */,
-				9742FADF1B5F7B7700D32020 /* SYStepPatch0.h */,
-				9742FAE01B5F7B7700D32020 /* SYStepPatch0.m */,
-				97C938801B5FFAE100EFBD6A /* SYStepPatch1.h */,
-				97C938811B5FFAE100EFBD6A /* SYStepPatch1.m */,
-				97EA1A101B5D798600635783 /* SYStepPatch2.h */,
-				97EA1A111B5D798600635783 /* SYStepPatch2.m */,
-				97C938831B600E5C00EFBD6A /* SYStepPatch3.h */,
-				97C938841B600E5C00EFBD6A /* SYStepPatch3.m */,
+				97650D9E1B6114CA0065C677 /* Patch */,
+				97650DA81B6115570065C677 /* Restore */,
 			);
 			name = Patches;
 			sourceTree = "<group>";
@@ -578,18 +619,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				97C938851B600E5C00EFBD6A /* SYStepPatch3.m in Sources */,
-				97C9387E1B5FF9DC00EFBD6A /* NSWindow+Alerts.m in Sources */,
+				978766451B60D41D00556E36 /* NSAttributedString+Tools.m in Sources */,
+				97C9387E1B5FF9DC00EFBD6A /* NSWindow+Tools.m in Sources */,
 				F81BF2331B2A003C002B1340 /* NSData+CocoaGitCompression.m in Sources */,
 				F829F37E1B2A17E9009B05BC /* SYComms.m in Sources */,
 				97EA1A0E1B5D745F00635783 /* SYStep.m in Sources */,
 				97EA19881B5C430B00635783 /* SYTitleView.m in Sources */,
 				979574031B400096001617B6 /* SYStepView.m in Sources */,
 				F8E2DDDF1B2636F1007A1AD4 /* SYViewController.m in Sources */,
+				97650DA71B6115530065C677 /* SYStepRestore2.m in Sources */,
 				F81BF22D1B2A0034002B1340 /* SYNVRAMHelper.m in Sources */,
 				F81BF2291B2A0034002B1340 /* SYAppleHDAHelper.m in Sources */,
 				97C938821B5FFAE100EFBD6A /* SYStepPatch1.m in Sources */,
 				9742FAE11B5F7B7700D32020 /* SYStepPatch0.m in Sources */,
 				F8062AA51B25B6B90060BB01 /* main.m in Sources */,
+				97650DA61B6115530065C677 /* SYStepRestore1.m in Sources */,
 				F81BF2351B2A003C002B1340 /* NSError+DigitalOust.m in Sources */,
 				97EA1A021B5D2B3E00635783 /* SYWindow.m in Sources */,
 				F81BF22B1B2A0034002B1340 /* SYIOKitHelper.m in Sources */,
@@ -597,7 +641,9 @@
 				97EA198B1B5CE38F00635783 /* INWindowButton.m in Sources */,
 				971516471B59C02E00EC3B06 /* SYReboot.m in Sources */,
 				97EA19D51B5D1B9C00635783 /* SYTrafficView.m in Sources */,
+				97650DA51B6115530065C677 /* SYStepRestore0.m in Sources */,
 				F8062AA31B25B6B90060BB01 /* SYAppDelegate.m in Sources */,
+				978766481B60E0E100556E36 /* NSColor+Tools.m in Sources */,
 				F8EC30961B28245900EF992A /* STPrivilegedTask.m in Sources */,
 				97EA1A121B5D798600635783 /* SYStepPatch2.m in Sources */,
 			);

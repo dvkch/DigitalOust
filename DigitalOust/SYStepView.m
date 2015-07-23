@@ -10,15 +10,14 @@
 #import "SYStep.h"
 #import "JESCircularProgressView.h"
 #import "Masonry.h"
-
-static NSImage *imageCheck;
-static NSImage *imageCross;
+#import "NSAttributedString+Tools.h"
+#import "NSWindow+Tools.h"
+#import "NSColor+Tools.h"
 
 @interface SYStepView ()
-@property (nonatomic, strong) NSTextField *labelTitle;
-@property (nonatomic, strong) NSTextField *labelDescr;
+@property (nonatomic, strong) NSView *roundView;
+@property (nonatomic, strong) NSTextField *labelText;
 @property (nonatomic, strong) NSTextField *labelNumber;
-@property (nonatomic, strong) NSImageView *imageView;
 @property (nonatomic, strong) JESCircularProgressView *progressView;
 @property (nonatomic, strong) NSButton *button;
 @end
@@ -26,12 +25,6 @@ static NSImage *imageCross;
 @implementation SYStepView
 
 #pragma mark - Init
-
-+ (void)initialize
-{
-    imageCheck = [NSImage imageNamed:@"check.png"];
-    imageCross = [NSImage imageNamed:@"cross.png"];
-}
 
 - (nonnull instancetype)init
 {
@@ -56,35 +49,38 @@ static NSImage *imageCross;
 
 - (void)customInit
 {
-    if(self.labelTitle)
+    if(self.labelText)
         return;
     
     [self setWantsLayer:YES];
     
-    self.labelTitle = [[NSTextField alloc] init];
-    [self.labelTitle setBordered:NO];
-    [self.labelTitle setEditable:NO];
-    [self.labelTitle setFont:[NSFont systemFontOfSize:[NSFont systemFontSize]+1]];
-    [self.labelTitle setDrawsBackground:NO];
-    [self addSubview:self.labelTitle];
-    
-    self.labelDescr = [[NSTextField alloc] init];
-    [self.labelDescr setBordered:NO];
-    [self.labelDescr setEditable:NO];
-    [self.labelDescr setLineBreakMode:NSLineBreakByWordWrapping];
-    [self.labelDescr setDrawsBackground:NO];
-    [self.labelDescr setTextColor:[NSColor darkGrayColor]];
-    [self addSubview:self.labelDescr];
-    
-    self.imageView = [[NSImageView alloc] init];
-    [self.imageView setImageScaling:NSImageScaleProportionallyDown];
-    [self.imageView setImageAlignment:NSImageAlignCenter];
-    [self addSubview:self.imageView];
+    self.roundView = [[NSView alloc] init];
+    [self.roundView setWantsLayer:YES];
+    [self.roundView.layer setCornerRadius:30];
+    [self.roundView.layer setBorderWidth:1.];
+    [self addSubview:self.roundView];
     
     self.progressView = [[JESCircularProgressView alloc] init];
     [self.progressView setTintColor:[NSColor grayColor]];
     [self.progressView setProgressLineWidth:10.];
     [self.progressView setOuterLineWidth:3.];
+    [self addSubview:self.progressView];
+    
+    self.labelText = [[NSTextField alloc] init];
+    [self.labelText setBordered:NO];
+    [self.labelText setEditable:NO];
+    [self.labelText setDrawsBackground:NO];
+    [self.labelText setLineBreakMode:NSLineBreakByWordWrapping];
+    [self addSubview:self.labelText];
+    
+    self.labelNumber = [[NSTextField alloc] init];
+    [self.labelNumber setBordered:NO];
+    [self.labelNumber setEditable:NO];
+    [self.labelNumber setLineBreakMode:NSLineBreakByWordWrapping];
+    [self.labelNumber setDrawsBackground:NO];
+    [self.labelNumber setFont:[NSFont boldSystemFontOfSize:30]];
+    [self.labelNumber setTextColor:[NSWindow defaultBackgroundColor:YES]];
+    [self addSubview:self.labelNumber];
     
     self.button = [[NSButton alloc] init];
     [self.button setButtonType:NSMomentaryPushInButton];
@@ -93,10 +89,16 @@ static NSImage *imageCross;
     [self.button setAction:@selector(buttonTap:)];
     [self addSubview:self.button];
     
-    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.equalTo(@22);
+    [self.roundView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(@0);
+        make.top.greaterThanOrEqualTo(@0);
+        make.bottom.lessThanOrEqualTo(@0);
+        make.size.equalTo(@60);
         make.left.equalTo(@0);
-        make.top.equalTo(@0);
+    }];
+    
+    [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.roundView);
     }];
     
     [self.button mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -106,33 +108,25 @@ static NSImage *imageCross;
         make.top.equalTo(@0);
     }];
     
-    [self.labelTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.imageView.mas_right).offset(10);
+    [self.labelText mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(@0);
+        make.top.greaterThanOrEqualTo(@0);
+        make.bottom.lessThanOrEqualTo(@0);
+        make.left.equalTo(self.roundView.mas_right).offset(10);
         make.right.equalTo(self.button.mas_left).offset(-10);
-        make.centerY.equalTo(self.imageView);
-        make.height.equalTo(@20);
     }];
     
-    [self updateConstraints];
+    [self.labelNumber mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.roundView);
+    }];
+    
+    [self setContentHuggingPriority:NSLayoutPriorityDefaultHigh forOrientation:NSLayoutConstraintOrientationVertical];
+    
     [self layoutSubtreeIfNeeded];
     [self updateState];
 }
 
 #pragma mark - Properties
-
-- (void)updateConstraints
-{
-    [super updateConstraints];
-    [self.labelDescr mas_remakeConstraints:^(MASConstraintMaker *make) {
-        BOOL hasContent = (self.labelDescr.stringValue.length != 0);
-        make.top.equalTo(self.labelTitle.mas_bottom).offset(hasContent ? 6 : 0);
-        make.bottom.equalTo(@0);
-        make.left.equalTo(@0);
-        make.right.equalTo(@0);
-        if (!hasContent)
-            make.height.equalTo(@0);
-    }];
-}
 
 - (void)setButtonEnabled:(BOOL)buttonEnabled
 {
@@ -166,33 +160,46 @@ static NSImage *imageCross;
     
     switch ([self.step image]) {
         case SYStepImageOK:
-            [self.imageView setHidden:NO];
-            [self.imageView setImage:imageCheck];
+            [self.roundView.layer setBackgroundColor:[NSColor colorTrafficLightGreenFill].CGColor];
+            [self.roundView.layer     setBorderColor:[NSColor colorTrafficLightGreenStroke].CGColor];
             [self.progressView setHidden:YES];
             break;
         case SYStepImageNotOK:
-            [self.imageView setHidden:NO];
-            [self.imageView setImage:imageCross];
+            [self.roundView.layer setBackgroundColor:[NSColor colorTrafficLightRedFill].CGColor];
+            [self.roundView.layer     setBorderColor:[NSColor colorTrafficLightRedStroke].CGColor];
+            [self.progressView setHidden:YES];
+            break;
+        case SYStepImageNotOKOptional:
+            [self.roundView.layer setBackgroundColor:[NSColor colorTrafficLightOrangeFill].CGColor];
+            [self.roundView.layer     setBorderColor:[NSColor colorTrafficLightOrangeStroke].CGColor];
             [self.progressView setHidden:YES];
             break;
         case SYStepImageProgressDetermined:
-            [self.imageView setHidden:YES];
+            [self.roundView.layer setBackgroundColor:[NSColor grayColor].CGColor];
+            [self.roundView.layer     setBorderColor:[NSColor grayColor].CGColor];
             [self.progressView setHidden:NO];
             break;
         case SYStepImageProgressUndetermined:
-            [self.imageView setHidden:YES];
+            [self.roundView.layer setBackgroundColor:[NSColor grayColor].CGColor];
+            [self.roundView.layer     setBorderColor:[NSColor grayColor].CGColor];
             [self.progressView setHidden:NO];
             break;
     }
     
-    [self.labelTitle setStringValue:[self.step titleText] ?: @""];
-    [self.labelDescr setStringValue:[self.step descrText] ?: @""];
+    NSFont *fontTitle = [NSFont systemFontOfSize:[NSFont systemFontSize]+1];
+    NSFont *fontDescr = [NSFont systemFontOfSize:[NSFont systemFontSize]];
+    NSColor *colorTitle = [NSColor blackColor];
+    NSColor *colorDescr = [NSColor darkGrayColor];
+    
+    NSAttributedString *title = [NSAttributedString attributedStringWithText:(self.step.titleText ?: @"") font:fontTitle color:colorTitle];
+    NSAttributedString *descr = [NSAttributedString attributedStringWithText:self.step.descrText          font:fontDescr color:colorDescr];
+    [self.labelText setAttributedStringValue:[NSAttributedString attributedStringsWithAttributedStrings:(descr ? @[title, descr] : @[title]) addReturn:YES]];
     
     NSString *buttonText = [self.step buttonText];
     [self.button setHidden:buttonText ? NO : YES];
     [self.button setTitle:buttonText ?: @""];
     
-    [self setNeedsUpdateConstraints:YES];
+    [self.labelNumber setStringValue:[NSString stringWithFormat:@"%d", (int)self.step.stepNumber]];
 }
 
 #pragma mark - Buttons
@@ -200,6 +207,15 @@ static NSImage *imageCross;
 - (void)buttonTap:(id)sender
 {
     [self.step buttonTap:self.window];
+}
+
+#pragma mark - NSObject
+
+- (NSString *)description
+{
+    NSMutableString *description = [[super description] mutableCopy];
+    [description insertString:[NSString stringWithFormat:@", step: %@", [self.step class]] atIndex:([description length]-1)];
+    return [description copy];
 }
 
 @end
