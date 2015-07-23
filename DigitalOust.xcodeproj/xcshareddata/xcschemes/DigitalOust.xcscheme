@@ -14,27 +14,27 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F81786A31B2A0D630018360D"
-               BuildableName = "DigitalOustHelper"
-               BlueprintName = "DigitalOustHelper"
+               BlueprintIdentifier = "F8062A9B1B25B6B90060BB01"
+               BuildableName = "DigitalOust.app"
+               BlueprintName = "DigitalOust"
                ReferencedContainer = "container:DigitalOust.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F81786A31B2A0D630018360D"
-            BuildableName = "DigitalOustHelper"
-            BlueprintName = "DigitalOustHelper"
+            BlueprintIdentifier = "F8062A9B1B25B6B90060BB01"
+            BuildableName = "DigitalOust.app"
+            BlueprintName = "DigitalOust"
             ReferencedContainer = "container:DigitalOust.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -42,11 +42,11 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
@@ -55,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F81786A31B2A0D630018360D"
-            BuildableName = "DigitalOustHelper"
-            BlueprintName = "DigitalOustHelper"
+            BlueprintIdentifier = "F8062A9B1B25B6B90060BB01"
+            BuildableName = "DigitalOust.app"
+            BlueprintName = "DigitalOust"
             ReferencedContainer = "container:DigitalOust.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -65,18 +65,18 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F81786A31B2A0D630018360D"
-            BuildableName = "DigitalOustHelper"
-            BlueprintName = "DigitalOustHelper"
+            BlueprintIdentifier = "F8062A9B1B25B6B90060BB01"
+            BuildableName = "DigitalOust.app"
+            BlueprintName = "DigitalOust"
             ReferencedContainer = "container:DigitalOust.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
