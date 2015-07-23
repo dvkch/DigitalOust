@@ -17,6 +17,19 @@
 #import "STPrivilegedTask.h"
 #import "NSError+DigitalOust.h"
 
+#ifndef NSAppKitVersionNumber10_8
+#define NSAppKitVersionNumber10_8 1187
+#endif
+
+#ifndef NSAppKitVersionNumber10_9
+#define NSAppKitVersionNumber10_9 1265
+#endif
+
+#ifndef NSAppKitVersionNumber10_10
+#define NSAppKitVersionNumber10_10 1343
+#endif
+
+
 NSString * const SYNVRAMHelper_bootArgs_kextDevModeON  = @"kext-dev-mode=1";
 NSString * const SYNVRAMHelper_bootArgs_kextDevModeOFF = @"kext-dev-mode=0";
 NSString * const SYNVRAMHelper_bootArgs_rootlessON     = @"rootless=1";
