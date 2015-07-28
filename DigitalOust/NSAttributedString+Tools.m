@@ -19,7 +19,7 @@
     return [[NSAttributedString alloc] initWithString:text attributes:attribs];
 }
 
-+ (instancetype)attributedStringsWithAttributedStrings:(NSArray *)strings addReturn:(BOOL)addReturn
++ (instancetype)attributedStringWithAttributedStrings:(NSArray *)strings addReturn:(BOOL)addReturn
 {
     NSMutableAttributedString *res = [[NSMutableAttributedString alloc] init];
     for(NSUInteger i = 0; i < [strings count]; ++i)

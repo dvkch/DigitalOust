@@ -8,25 +8,34 @@
 
 #import "SYKextHelper.h"
 
+@interface SYKextHelper ()
+@property (nonatomic, assign) BOOL canceled;
+@property (nonatomic, strong) NSArray *lastInvalidKexts;
+@property (nonatomic, strong) NSDictionary *lastCheckedKexts;
+@end
+
 @implementation SYKextHelper
 
-+ (void)listInvalidKextsWithProgress:(void (^)(CGFloat))progressBlock
+- (void)listInvalidKextsWithProgress:(void (^)(CGFloat))progressBlock
                           completion:(void (^)(NSArray *))completionBlock
 {
     if ([[NSThread currentThread] isMainThread])
     {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
             [self listInvalidKextsWithProgress:progressBlock completion:completionBlock];
         });
         return;
     }
     
+    self.canceled = NO;
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *url = [NSURL URLWithString:@"/System/Library/Extensions"];
     NSDirectoryEnumerator *enumerator = [fileManager enumeratorAtURL:url
-                                          includingPropertiesForKeys:@[NSURLNameKey, NSURLIsDirectoryKey]
-                                                             options:NSDirectoryEnumerationSkipsHiddenFiles
+                                          includingPropertiesForKeys:@[NSURLNameKey,
+                                                                       NSURLIsDirectoryKey,
+                                                                       NSURLContentModificationDateKey]
+                                                             options:0
                                                         errorHandler:^BOOL(NSURL *url, NSError *error)
     {
         if (error) {
@@ -37,7 +46,9 @@
         return YES;
     }];
     
-    NSMutableArray *kextsURLs = [NSMutableArray array];
+    NSUInteger kextCount = 0;
+    NSMutableDictionary *listing = [NSMutableDictionary dictionary];
+    
     for (NSURL *fileURL in enumerator)
     {
         NSString *filename;
@@ -46,26 +57,53 @@
         NSNumber *isDirectory;
         [fileURL getResourceValue:&isDirectory forKey:NSURLIsDirectoryKey error:nil];
         
-        if ([filename hasSuffix:@".kext"] && [isDirectory boolValue])
-            [kextsURLs addObject:fileURL];
+        NSDate *modifDate;
+        [fileURL getResourceValue:&modifDate forKey:NSURLContentModificationDateKey error:nil];
+        
+        if (![filename hasSuffix:@".kext"] || ![isDirectory boolValue])
+            continue;
+        
+        ++kextCount;
+
+        NSDate *lastModifDate = self.lastCheckedKexts[[fileURL path]];
+        if (modifDate.timeIntervalSince1970 > lastModifDate.timeIntervalSince1970)
+            [listing setObject:modifDate forKey:[fileURL path]];
     }
     
-    NSMutableArray *invalidKexts = [NSMutableArray array];
-    for(NSUInteger i = 0; i < kextsURLs.count; ++i)
+    NSMutableArray *invalidKexts = [NSMutableArray arrayWithArray:self.lastInvalidKexts];
+    NSMutableDictionary *checkedKexts = [NSMutableDictionary dictionaryWithDictionary:self.lastCheckedKexts];
+    
+    for(NSUInteger i = 0; i < [listing allKeys].count; ++i)
     {
-        NSURL *kextURL = kextsURLs[i];
+        if (self.canceled)
+            break;
+        
+        NSString *kextPath = [listing allKeys][i];
         NSTask *task = [[NSTask alloc] init];
         task.launchPath = @"/usr/bin/codesign";
-        task.arguments = @[@"--verify", @"--no-strict", [kextURL path]];
+        task.arguments = @[@"--verify", @"--no-strict", kextPath];
         [task launch];
         [task waitUntilExit];
+        
+        [checkedKexts setObject:listing[kextPath] forKey:kextPath];
         if ([task terminationStatus] != 0)
-            [invalidKexts addObject:[kextURL path]];
+            [invalidKexts addObject:kextPath];
         if (progressBlock)
-            progressBlock((CGFloat)([kextsURLs indexOfObject:kextURL] + 1) / (CGFloat)[kextsURLs count]);
+            progressBlock((CGFloat)(self.lastCheckedKexts.count + i + 1) / (CGFloat)kextCount);
     }
-    if (completionBlock)
-        completionBlock([invalidKexts copy]);
+    
+    self.lastCheckedKexts = [checkedKexts copy];
+    self.lastInvalidKexts = [invalidKexts copy];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (completionBlock)
+            completionBlock([invalidKexts copy]);
+    });
+}
+
+- (void)stopListingInvalidKexts
+{
+    self.canceled = YES;
 }
 
 @end

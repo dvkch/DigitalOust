@@ -11,6 +11,6 @@
 @interface NSAttributedString (Tools)
 
 + (instancetype)attributedStringWithText:(NSString *)text font:(NSFont *)font color:(NSColor *)color;
-+ (instancetype)attributedStringsWithAttributedStrings:(NSArray *)strings addReturn:(BOOL)addReturn;
++ (instancetype)attributedStringWithAttributedStrings:(NSArray *)strings addReturn:(BOOL)addReturn;
 
 @end

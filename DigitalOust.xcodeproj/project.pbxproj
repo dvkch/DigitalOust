@@ -21,7 +21,8 @@
 		978766451B60D41D00556E36 /* NSAttributedString+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 978766441B60D41D00556E36 /* NSAttributedString+Tools.m */; };
 		978766481B60E0E100556E36 /* NSColor+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 978766471B60E0E100556E36 /* NSColor+Tools.m */; };
 		979574031B400096001617B6 /* SYStepView.m in Sources */ = {isa = PBXBuildFile; fileRef = 979574021B400096001617B6 /* SYStepView.m */; };
-		97C9387E1B5FF9DC00EFBD6A /* NSWindow+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C9387D1B5FF9DC00EFBD6A /* NSWindow+Tools.m */; };
+		97C8DD861B66D41A00DE3860 /* NSAlert+Popover.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C8DD851B66D41A00DE3860 /* NSAlert+Popover.m */; };
+		97C9387E1B5FF9DC00EFBD6A /* NSAlert+DigitalOust.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C9387D1B5FF9DC00EFBD6A /* NSAlert+DigitalOust.m */; };
 		97C938821B5FFAE100EFBD6A /* SYStepPatch1.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C938811B5FFAE100EFBD6A /* SYStepPatch1.m */; };
 		97C938851B600E5C00EFBD6A /* SYStepPatch3.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C938841B600E5C00EFBD6A /* SYStepPatch3.m */; };
 		97EA19881B5C430B00635783 /* SYTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EA19871B5C430B00635783 /* SYTitleView.m */; };
@@ -128,8 +129,10 @@
 		978766471B60E0E100556E36 /* NSColor+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Tools.m"; sourceTree = "<group>"; };
 		979574011B400096001617B6 /* SYStepView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYStepView.h; sourceTree = "<group>"; };
 		979574021B400096001617B6 /* SYStepView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYStepView.m; sourceTree = "<group>"; };
-		97C9387C1B5FF9DC00EFBD6A /* NSWindow+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+Tools.h"; sourceTree = "<group>"; };
-		97C9387D1B5FF9DC00EFBD6A /* NSWindow+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+Tools.m"; sourceTree = "<group>"; };
+		97C8DD841B66D41A00DE3860 /* NSAlert+Popover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+Popover.h"; sourceTree = "<group>"; };
+		97C8DD851B66D41A00DE3860 /* NSAlert+Popover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+Popover.m"; sourceTree = "<group>"; };
+		97C9387C1B5FF9DC00EFBD6A /* NSAlert+DigitalOust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+DigitalOust.h"; sourceTree = "<group>"; };
+		97C9387D1B5FF9DC00EFBD6A /* NSAlert+DigitalOust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+DigitalOust.m"; sourceTree = "<group>"; };
 		97C938801B5FFAE100EFBD6A /* SYStepPatch1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYStepPatch1.h; sourceTree = "<group>"; };
 		97C938811B5FFAE100EFBD6A /* SYStepPatch1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYStepPatch1.m; sourceTree = "<group>"; };
 		97C938831B600E5C00EFBD6A /* SYStepPatch3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYStepPatch3.h; sourceTree = "<group>"; };
@@ -253,11 +256,29 @@
 			name = Restore;
 			sourceTree = "<group>";
 		};
+		97C8DD871B66D42400DE3860 /* NSAlert+Popover */ = {
+			isa = PBXGroup;
+			children = (
+				97C8DD841B66D41A00DE3860 /* NSAlert+Popover.h */,
+				97C8DD851B66D41A00DE3860 /* NSAlert+Popover.m */,
+			);
+			name = "NSAlert+Popover";
+			sourceTree = "<group>";
+		};
+		97C8DD881B66D43600DE3860 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				97EA19FF1B5D274000635783 /* INAppStoreWindow */,
+				97C8DD871B66D42400DE3860 /* NSAlert+Popover */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		97C9387F1B5FF9DF00EFBD6A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				97C9387C1B5FF9DC00EFBD6A /* NSWindow+Tools.h */,
-				97C9387D1B5FF9DC00EFBD6A /* NSWindow+Tools.m */,
+				97C9387C1B5FF9DC00EFBD6A /* NSAlert+DigitalOust.h */,
+				97C9387D1B5FF9DC00EFBD6A /* NSAlert+DigitalOust.m */,
 				978766431B60D41D00556E36 /* NSAttributedString+Tools.h */,
 				978766441B60D41D00556E36 /* NSAttributedString+Tools.m */,
 				978766461B60E0E100556E36 /* NSColor+Tools.h */,
@@ -351,7 +372,7 @@
 				F8EEEADA1B27789100F84430 /* Views */,
 				97EA1A0F1B5D78BA00635783 /* Patches */,
 				97C9387F1B5FF9DF00EFBD6A /* Categories */,
-				97EA19FF1B5D274000635783 /* INAppStoreWindow */,
+				97C8DD881B66D43600DE3860 /* Libraries */,
 				F8EEEADB1B27789F00F84430 /* Root */,
 				F8062AA11B25B6B90060BB01 /* SYAppDelegate.h */,
 				F8062AA21B25B6B90060BB01 /* SYAppDelegate.m */,
@@ -620,7 +641,7 @@
 			files = (
 				97C938851B600E5C00EFBD6A /* SYStepPatch3.m in Sources */,
 				978766451B60D41D00556E36 /* NSAttributedString+Tools.m in Sources */,
-				97C9387E1B5FF9DC00EFBD6A /* NSWindow+Tools.m in Sources */,
+				97C9387E1B5FF9DC00EFBD6A /* NSAlert+DigitalOust.m in Sources */,
 				F81BF2331B2A003C002B1340 /* NSData+CocoaGitCompression.m in Sources */,
 				F829F37E1B2A17E9009B05BC /* SYComms.m in Sources */,
 				97EA1A0E1B5D745F00635783 /* SYStep.m in Sources */,
@@ -629,6 +650,7 @@
 				F8E2DDDF1B2636F1007A1AD4 /* SYViewController.m in Sources */,
 				97650DA71B6115530065C677 /* SYStepRestore2.m in Sources */,
 				F81BF22D1B2A0034002B1340 /* SYNVRAMHelper.m in Sources */,
+				97C8DD861B66D41A00DE3860 /* NSAlert+Popover.m in Sources */,
 				F81BF2291B2A0034002B1340 /* SYAppleHDAHelper.m in Sources */,
 				97C938821B5FFAE100EFBD6A /* SYStepPatch1.m in Sources */,
 				9742FAE11B5F7B7700D32020 /* SYStepPatch0.m in Sources */,

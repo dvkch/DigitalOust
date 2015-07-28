@@ -9,12 +9,12 @@
 #import "SYStepPatch3.h"
 #import "SYNVRAMHelper.h"
 #import "SYComms.h"
-#import "NSWindow+Tools.h"
+#import "NSAlert+DigitalOust.h"
 #import "NSError+DigitalOust.h"
 
 @implementation SYStepPatch3
 
-- (NSString *)state
+- (NSString *)statusString
 {
     switch ([SYNVRAMHelper rootlessStatus]) {
         case SYNVRAMBootArgStatusNotRequired:   return @"hide";
@@ -26,52 +26,54 @@
 
 - (NSString *)titleText
 {
-    if ([[self state] isEqualToString:@"ok"])
+    if ([[self statusString] isEqualToString:@"ok"])
         return @"Boot configuration: everything is good!";
-    if ([[self state] isEqualToString:@"enable"])
+    if ([[self statusString] isEqualToString:@"enable"])
         return @"Boot configuration: rootless can be re-enabled";
     return nil;
 }
 
 - (NSString *)buttonText
 {
-    if ([[self state] isEqualToString:@"enable"])
+    if ([[self statusString] isEqualToString:@"enable"])
         return @"Disable";
     return nil;
 }
 
 - (NSString *)descrText
 {
-    if ([[self state] isEqualToString:@"enable"])
+    if ([[self statusString] isEqualToString:@"enable"])
         return @"Rootless mode has been disabled to apply this patch, and can be re-enabled. This step is optional as you may want to keep rootless mode disabled for other reasons";
     return nil;
 }
 
 - (SYStepImage)image
 {
-    if ([[self state] isEqualToString:@"enable"])  return SYStepImageNotOKOptional;
+    if ([[self statusString] isEqualToString:@"enable"])  return SYStepImageNotOKOptional;
     return SYStepImageOK;
 }
 
 - (BOOL)show
 {
-    return ![[self state] isEqualToString:@"hide"];
+    return ![[self statusString] isEqualToString:@"hide"];
 }
 
-- (void)buttonTap:(NSWindow *)window
+- (void)buttonTap:(NSView *)sender
 {
     BOOL needsReboot = [SYNVRAMHelper rootlessStatus] == SYNVRAMBootArgStatusOFF;
     
     SYCommsCompletionBlock block = ^(NSError *error) {
         if (error)
-            [window displayAlertWithTitle:@"Error while updating boot configuration"
-                          informativeText:[error localizedDescriptionSY]];
+            [NSAlert displayAlertWithTitle:@"Error while updating boot configuration"
+                                 informativeText:[error localizedDescriptionSY]
+                            onWindowOrView:sender.window];
         else
-            [window displayAlertWithTitle:@"Boot configuration updated with success"
-                             askForReboot:needsReboot];
+            [NSAlert displayAlertWithTitle:@"Boot configuration updated with success"
+                                    askForReboot:needsReboot
+                            onWindowOrView:sender.window];
     };
     
-    if ([[self state] isEqualToString:@"enable"])
+    if ([[self statusString] isEqualToString:@"enable"])
         [[SYComms shared] sendCommand:SYCommsCommandEnableRootless args:nil completion:block];
 }
 

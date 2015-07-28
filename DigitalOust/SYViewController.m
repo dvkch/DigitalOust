@@ -22,11 +22,14 @@
 #import "SYTitleView.h"
 #import "SYAppDelegate.h"
 #import "NSError+DigitalOust.h"
-#import "NSWindow+Tools.h"
+#import "NSAlert+DigitalOust.h"
+#import "NSColor+Tools.h"
 
 @interface SYViewController () <SYCommsDelegate>
 @property (nonatomic, strong) SYTitleView           *titleView;
 @property (nonatomic, strong) NSSegmentedControl    *segmentedControl;
+@property (nonatomic, strong) NSView                *contentViewPatch;
+@property (nonatomic, strong) NSView                *contentViewRestore;
 @property (nonatomic, strong) NSArray               *stepViewsPatch;
 @property (nonatomic, strong) NSArray               *stepViewsRestore;
 
@@ -81,7 +84,7 @@
     
     self.segmentedControl = [[NSSegmentedControl alloc] init];
     [self.segmentedControl setSegmentCount:2];
-    [self.segmentedControl setSegmentStyle:NSSegmentStyleRoundRect];
+    [self.segmentedControl setSegmentStyle:NSSegmentStyleRounded];
     [self.segmentedControl setLabel:@"Patch"    forSegment:0];
     [self.segmentedControl setLabel:@"Restore"  forSegment:1];
     [self.segmentedControl setTarget:self];
@@ -105,6 +108,16 @@
     
     [self openTab:0];
     [[SYComms shared] setIdentifier:@"app" delegate:self];
+    
+    [self test];
+}
+
+- (void)test
+{
+    NSLog(@"%@", NSStringFromSize([self.view fittingSize]));
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2. * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self test];
+    });
 }
 
 - (void)viewWillAppear
@@ -133,14 +146,15 @@
     
     if(oserror != errAuthorizationSuccess)
     {
-        [self.view.window displayAlertWithTitle:@"Couldn't start agent"
-                                informativeText:[[NSError SYErrorAuthWithCode:oserror] localizedDescriptionSY]
-                                        button0:@"Close"
-                                        button1:@"Try again"
-                                          block:^(NSUInteger tappedIndex) {
-                                              if (tappedIndex == 1)
-                                                  [self startAgentAndComms];
-                                          }];
+        [NSAlert displayAlertWithTitle:@"Couldn't start agent"
+                       informativeText:[[NSError SYErrorAuthWithCode:oserror] localizedDescriptionSY]
+                               button0:@"Close"
+                               button1:@"Try again"
+                        onWindowOrView:self.view.window
+                                 block:^(NSUInteger tappedIndex) {
+                                     if (tappedIndex == 1)
+                                         [self startAgentAndComms];
+                                 }];
         return;
     }
     
@@ -172,23 +186,27 @@
     [self.stepViewsPatch   makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.stepViewsRestore makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
-    NSArray *stepViews = (tab == 0) ? self.stepViewsPatch : self.stepViewsRestore;
+    NSArray *newStepViews = (tab == 0) ? self.stepViewsPatch : self.stepViewsRestore;
+    NSArray *oldStepViews = (tab == 0) ? self.stepViewsRestore : self.stepViewsPatch;
     
-    for (NSUInteger i = 0; i < [stepViews count]; ++i)
+    for (NSUInteger i = 0; i < [newStepViews count]; ++i)
     {
-        NSView *view = stepViews[i];
+        SYStepView *view = newStepViews[i];
         [self.view addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             if (i == 0)
                 make.top.equalTo(self.segmentedControl.mas_bottom).offset(20);
             else
-                make.top.equalTo(((NSView *)stepViews[i-1]).mas_bottom).offset(20);
+                make.top.equalTo(((NSView *)newStepViews[i-1]).mas_bottom).offset(20);
             make.left.equalTo(@18);
             make.right.equalTo(@(-18));
-            if (i == stepViews.count - 1)
+            if (i == newStepViews.count - 1)
                 make.bottom.equalTo(@(-20));
         }];
     }
+    
+    [oldStepViews makeObjectsPerformSelector:@selector(stopUpdate)];
+    [newStepViews makeObjectsPerformSelector:@selector(startUpdate)];
     
     [self.view setNeedsLayout:YES];
 }
@@ -209,7 +227,7 @@
 - (void)updateBackgroundColor
 {
     BOOL active = (!self.view.window || self.view.window.isKeyWindow);
-    [self.view.layer setBackgroundColor:[NSWindow defaultBackgroundColor:active].CGColor];
+    [self.view.layer setBackgroundColor:[NSColor windowBackgroundColor:active].CGColor];
 }
 
 - (void)updateItems

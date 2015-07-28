@@ -83,6 +83,10 @@ NSString * const SYNVRAMHelper_bootArgs_rootlessOFF    = @"rootless=0";
         {
             value = [(__bridge NSString *)(valueRef) copy];
         }
+        else if(CFGetTypeID(valueRef) == CFNumberGetTypeID())
+        {
+            value = [(__bridge NSNumber *)(valueRef) copy];
+        }
         else
         {
             value = [(__bridge id)(valueRef) copy];

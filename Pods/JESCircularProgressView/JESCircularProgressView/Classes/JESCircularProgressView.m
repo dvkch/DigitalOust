@@ -23,6 +23,9 @@ static const CGFloat JESDefaultProgressLineWidth = 4;
 @property (nonatomic, strong) NSBezierPath *progressPath;
 @property (nonatomic, strong) NSBezierPath *outerPath;
 
+@property (nonatomic, assign) CGPoint   cacheCenter;
+@property (nonatomic, assign) NSRect    cacheProgressLineInset;
+
 @end
 
 @implementation JESCircularProgressView
@@ -73,6 +76,21 @@ static const CGFloat JESDefaultProgressLineWidth = 4;
 
 	[self drawOuterCircle];
 	[self drawProgressCircle];
+}
+
+- (void)setFrame:(NSRect)frame {
+    [super setFrame:frame];
+    self.cacheCenter = CGPointZero;
+    self.cacheProgressLineInset = NSZeroRect;
+#warning MERGE REQUEST
+    [self.outerLayer    setFrame:self.layer.bounds];
+    [self.progressLayer setFrame:self.layer.bounds];
+    self.outerPath = nil;
+    self.progressPath = nil;
+    
+    [self drawOuterCircle];
+    [self drawProgressCircle];
+    [self setNeedsDisplay:YES];
 }
 
 #pragma mark - Getters/Setters
@@ -163,29 +181,27 @@ static const CGFloat JESDefaultProgressLineWidth = 4;
 }
 
 - (CGRect)progressLineInset {
-	static CGRect progressLineInset;
-	if (CGRectIsEmpty(progressLineInset)) {
-		progressLineInset = CGRectIntegral(CGRectInset(self.bounds,
-		                                               round(self.progressLineWidth + self.outerLineWidth),
-		                                               round(self.progressLineWidth + self.outerLineWidth)));
+	if (CGRectIsEmpty(self.cacheProgressLineInset)) {
+		self.cacheProgressLineInset = CGRectIntegral(CGRectInset(self.bounds,
+                                                                 round(self.progressLineWidth + self.outerLineWidth),
+                                                                 round(self.progressLineWidth + self.outerLineWidth)));
 	}
-    if (!isnormal(progressLineInset.origin.x) ||
-        !isnormal(progressLineInset.origin.y) ||
-        !isnormal(progressLineInset.size.width) ||
-        !isnormal(progressLineInset.size.height))
+    if (!isnormal(self.cacheProgressLineInset.origin.x) ||
+        !isnormal(self.cacheProgressLineInset.origin.y) ||
+        !isnormal(self.cacheProgressLineInset.size.width) ||
+        !isnormal(self.cacheProgressLineInset.size.height))
     {
-        progressLineInset = CGRectZero;
+        self.cacheProgressLineInset = CGRectZero;
     }
-	return progressLineInset;
+	return self.cacheProgressLineInset;
 }
 
 - (CGPoint)center {
-	static CGPoint center;
-	if (CGPointEqualToPoint(CGPointZero, center)) {
-		center = CGPointMake(round(CGRectGetMidX([self progressLineInset])),
-		                     round(CGRectGetMidY([self progressLineInset])));
+	if (CGPointEqualToPoint(CGPointZero, self.cacheCenter)) {
+		self.cacheCenter = CGPointMake(round(CGRectGetMidX([self progressLineInset])),
+                                       round(CGRectGetMidY([self progressLineInset])));
 	}
-	return center;
+	return self.cacheCenter;
 }
 
 # pragma mark - Interface Builder Support

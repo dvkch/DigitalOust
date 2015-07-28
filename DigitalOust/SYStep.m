@@ -10,6 +10,11 @@
 
 @implementation SYStep
 
+- (NSString *)statusString
+{
+    return nil;
+}
+
 - (NSString *)titleText
 {
     return nil;
@@ -40,7 +45,17 @@
     return YES;
 }
 
-- (void)buttonTap:(NSWindow *)window
+- (void)buttonTap:(NSView *)sender
+{
+    
+}
+
+- (void)startUpdating
+{
+    
+}
+
+- (void)stopUpdating
 {
     
 }

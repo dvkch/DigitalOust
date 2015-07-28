@@ -10,7 +10,8 @@
 
 @interface SYKextHelper : NSObject
 
-+ (void)listInvalidKextsWithProgress:(void(^)(CGFloat progress))progressBlock
+- (void)listInvalidKextsWithProgress:(void(^)(CGFloat progress))progressBlock
                           completion:(void(^)(NSArray *invalidKexts))completionBlock;
+- (void)stopListingInvalidKexts;
 
 @end

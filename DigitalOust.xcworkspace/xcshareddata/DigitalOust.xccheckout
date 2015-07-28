@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>55FFE732-2CDB-4886-B020-0F21D896FE18</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DigitalOust</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>20E03066A5A3E8B70F2E4BECCAF7C107F93D4A54</key>
+		<string>https://bitbucket.org/dvkch/digitaloust.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DigitalOust.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>20E03066A5A3E8B70F2E4BECCAF7C107F93D4A54</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/dvkch/digitaloust.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>20E03066A5A3E8B70F2E4BECCAF7C107F93D4A54</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>20E03066A5A3E8B70F2E4BECCAF7C107F93D4A54</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DigitalOust</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -21,4 +21,9 @@
 + (NSColor *)colorTrafficLightGreenStroke;
 + (NSColor *)colorTrafficLightGreenFill;
 
++ (NSColor *)colorAquaStroke;
++ (NSColor *)colorAquaFill;
+
++ (NSColor *)windowBackgroundColor:(BOOL)active;
+
 @end

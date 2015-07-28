@@ -11,7 +11,7 @@
 #import "JESCircularProgressView.h"
 #import "Masonry.h"
 #import "NSAttributedString+Tools.h"
-#import "NSWindow+Tools.h"
+#import "NSAlert+DigitalOust.h"
 #import "NSColor+Tools.h"
 
 @interface SYStepView ()
@@ -20,6 +20,8 @@
 @property (nonatomic, strong) NSTextField *labelNumber;
 @property (nonatomic, strong) JESCircularProgressView *progressView;
 @property (nonatomic, strong) NSButton *button;
+@property (nonatomic, assign) CGFloat widthDiffForLabelText;
+@property (nonatomic, assign) CGFloat lastLayoutWidth;
 @end
 
 @implementation SYStepView
@@ -53,17 +55,26 @@
         return;
     
     [self setWantsLayer:YES];
-    
+
     self.roundView = [[NSView alloc] init];
     [self.roundView setWantsLayer:YES];
     [self.roundView.layer setCornerRadius:30];
     [self.roundView.layer setBorderWidth:1.];
     [self addSubview:self.roundView];
     
+    self.labelNumber = [[NSTextField alloc] init];
+    [self.labelNumber setBordered:NO];
+    [self.labelNumber setEditable:NO];
+    [self.labelNumber setLineBreakMode:NSLineBreakByWordWrapping];
+    [self.labelNumber setDrawsBackground:NO];
+    [self.labelNumber setFont:[NSFont boldSystemFontOfSize:30]];
+    [self.labelNumber setTextColor:[NSColor windowBackgroundColor:YES]];
+    [self addSubview:self.labelNumber];
+    
     self.progressView = [[JESCircularProgressView alloc] init];
     [self.progressView setTintColor:[NSColor grayColor]];
-    [self.progressView setProgressLineWidth:10.];
-    [self.progressView setOuterLineWidth:3.];
+    [self.progressView setProgressLineWidth:3.];
+    [self.progressView setOuterLineWidth:1.];
     [self addSubview:self.progressView];
     
     self.labelText = [[NSTextField alloc] init];
@@ -72,15 +83,6 @@
     [self.labelText setDrawsBackground:NO];
     [self.labelText setLineBreakMode:NSLineBreakByWordWrapping];
     [self addSubview:self.labelText];
-    
-    self.labelNumber = [[NSTextField alloc] init];
-    [self.labelNumber setBordered:NO];
-    [self.labelNumber setEditable:NO];
-    [self.labelNumber setLineBreakMode:NSLineBreakByWordWrapping];
-    [self.labelNumber setDrawsBackground:NO];
-    [self.labelNumber setFont:[NSFont boldSystemFontOfSize:30]];
-    [self.labelNumber setTextColor:[NSWindow defaultBackgroundColor:YES]];
-    [self addSubview:self.labelNumber];
     
     self.button = [[NSButton alloc] init];
     [self.button setButtonType:NSMomentaryPushInButton];
@@ -120,10 +122,25 @@
         make.center.equalTo(self.roundView);
     }];
     
+    self.widthDiffForLabelText = 60 + 80 + 2 * 10;
+    
     [self setContentHuggingPriority:NSLayoutPriorityDefaultHigh forOrientation:NSLayoutConstraintOrientationVertical];
     
     [self layoutSubtreeIfNeeded];
-    [self updateState];
+    [self updateState:NO];
+}
+
+#pragma mark - Public
+
+- (void)startUpdate
+{
+    [self.step startUpdating];
+    [self updateState:NO];
+}
+
+- (void)stopUpdate
+{
+    [self.step stopUpdating];
 }
 
 #pragma mark - Properties
@@ -140,49 +157,57 @@
     [self.step setUpdatedBlock:nil];
     
     self->_step = step;
-    [self updateState];
+    [self updateState:NO];
     
     __weak SYStepView *wSelf = self;
     [step setProgressBlock:^(CGFloat progress) {
-        [wSelf.progressView setProgress:progress animated:YES];
+        [wSelf.progressView setProgress:progress animated:NO];
     }];
     [step setUpdatedBlock:^{
-        [wSelf updateState];
+        [wSelf updateState:YES];
     }];
 }
 
 #pragma mark - State
 
-- (void)updateState
+- (void)updateState:(BOOL)animated
 {
     if(!self.step)
         return;
     
+    if (animated)
+    {
+        [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
+            context.duration = 2.f;
+            [self updateState:NO];
+        } completionHandler:nil];
+        return;
+    }
+    
     switch ([self.step image]) {
         case SYStepImageOK:
-            [self.roundView.layer setBackgroundColor:[NSColor colorTrafficLightGreenFill].CGColor];
-            [self.roundView.layer     setBorderColor:[NSColor colorTrafficLightGreenStroke].CGColor];
-            [self.progressView setHidden:YES];
+            [self.roundView.layer setBackgroundColor:[NSColor colorAquaFill].CGColor];
+            [self.roundView.layer     setBorderColor:[NSColor colorAquaStroke].CGColor];
+            [self.roundView     setHidden:NO];
+            [self.progressView  setHidden:YES];
             break;
         case SYStepImageNotOK:
             [self.roundView.layer setBackgroundColor:[NSColor colorTrafficLightRedFill].CGColor];
             [self.roundView.layer     setBorderColor:[NSColor colorTrafficLightRedStroke].CGColor];
-            [self.progressView setHidden:YES];
+            [self.roundView     setHidden:NO];
+            [self.progressView  setHidden:YES];
             break;
         case SYStepImageNotOKOptional:
             [self.roundView.layer setBackgroundColor:[NSColor colorTrafficLightOrangeFill].CGColor];
             [self.roundView.layer     setBorderColor:[NSColor colorTrafficLightOrangeStroke].CGColor];
-            [self.progressView setHidden:YES];
+            [self.roundView     setHidden:NO];
+            [self.progressView  setHidden:YES];
             break;
         case SYStepImageProgressDetermined:
             [self.roundView.layer setBackgroundColor:[NSColor grayColor].CGColor];
             [self.roundView.layer     setBorderColor:[NSColor grayColor].CGColor];
-            [self.progressView setHidden:NO];
-            break;
-        case SYStepImageProgressUndetermined:
-            [self.roundView.layer setBackgroundColor:[NSColor grayColor].CGColor];
-            [self.roundView.layer     setBorderColor:[NSColor grayColor].CGColor];
-            [self.progressView setHidden:NO];
+            [self.roundView     setHidden:YES];
+            [self.progressView  setHidden:NO];
             break;
     }
     
@@ -191,22 +216,51 @@
     NSColor *colorTitle = [NSColor blackColor];
     NSColor *colorDescr = [NSColor darkGrayColor];
     
-    NSAttributedString *title = [NSAttributedString attributedStringWithText:(self.step.titleText ?: @"") font:fontTitle color:colorTitle];
-    NSAttributedString *descr = [NSAttributedString attributedStringWithText:self.step.descrText          font:fontDescr color:colorDescr];
-    [self.labelText setAttributedStringValue:[NSAttributedString attributedStringsWithAttributedStrings:(descr ? @[title, descr] : @[title]) addReturn:YES]];
+    NSAttributedString *title = [NSAttributedString attributedStringWithText:(self.step.titleText ?: @"")
+                                                                        font:fontTitle color:colorTitle];
+    NSAttributedString *descr = [NSAttributedString attributedStringWithText:self.step.descrText
+                                                                        font:fontDescr color:colorDescr];
+    
+    NSArray *strings = (descr ? @[title, descr] : @[title]);
+    [self.labelText setAttributedStringValue:[NSAttributedString attributedStringWithAttributedStrings:strings
+                                                                                             addReturn:YES]];
     
     NSString *buttonText = [self.step buttonText];
     [self.button setHidden:buttonText ? NO : YES];
     [self.button setTitle:buttonText ?: @""];
     
-    [self.labelNumber setStringValue:[NSString stringWithFormat:@"%d", (int)self.step.stepNumber]];
+    [self.labelNumber setStringValue:[NSString stringWithFormat:@"%d", (int)self.step.stepNumber + 1]];
+    
+    [self invalidateIntrinsicContentSize];
+}
+
+- (CGFloat)fittingHeight
+{
+    CGFloat textW = self.frame.size.width - self.widthDiffForLabelText;
+    CGFloat textH = [self.labelText.attributedStringValue boundingRectWithSize:NSMakeSize(textW, CGFLOAT_MAX)
+                                                                       options:NSStringDrawingUsesLineFragmentOrigin].size.height;
+    return MAX(60, textH);
+}
+
+- (NSSize)intrinsicContentSize
+{
+    return NSMakeSize(NSViewNoInstrinsicMetric, [self fittingHeight]);
+}
+
+- (void)layout
+{
+    [super layout];
+    BOOL newWidth = fabs(self.frame.size.width - self.lastLayoutWidth) > 0.1;
+    self.lastLayoutWidth = self.frame.size.width;
+    if (newWidth)
+        [self invalidateIntrinsicContentSize];
 }
 
 #pragma mark - Buttons
 
-- (void)buttonTap:(id)sender
+- (void)buttonTap:(NSView *)sender
 {
-    [self.step buttonTap:self.window];
+    [self.step buttonTap:sender];
 }
 
 #pragma mark - NSObject

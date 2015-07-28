@@ -12,7 +12,6 @@ typedef enum : NSUInteger {
     SYStepImageOK,
     SYStepImageNotOK,
     SYStepImageNotOKOptional,
-    SYStepImageProgressUndetermined,
     SYStepImageProgressDetermined,
 } SYStepImage;
 
@@ -22,12 +21,15 @@ typedef enum : NSUInteger {
 @property (nonatomic, copy) void(^progressBlock)(CGFloat progress);
 @property (nonatomic, copy) void(^updatedBlock)(void);
 
+- (NSString *)statusString;
 - (NSString *)titleText;
 - (NSString *)buttonText;
 - (NSString *)descrText;
 - (SYStepImage)image;
 - (BOOL)show;
 - (BOOL)requiresRoot;
-- (void)buttonTap:(NSWindow *)window;
+- (void)buttonTap:(NSView *)sender;
+- (void)startUpdating;
+- (void)stopUpdating;
 
 @end

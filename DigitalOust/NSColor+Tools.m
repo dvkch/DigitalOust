@@ -61,4 +61,19 @@
     return [self colorWithHex:@"33c748"];
 }
 
++ (NSColor *)colorAquaStroke
+{
+    return [self colorWithHex:@"0064f5"];
+}
+
++ (NSColor *)colorAquaFill
+{
+    return [self colorWithHex:@"65b4f5"];
+}
+
++ (NSColor *)windowBackgroundColor:(BOOL)active
+{
+    return [NSColor colorWithCalibratedWhite:(active ? 232. : 246.)/255. alpha:1.];
+}
+
 @end

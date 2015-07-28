@@ -9,11 +9,11 @@
 #import "SYStepPatch0.h"
 #import "SYIOKitHelper.h"
 #import "SYAppleHDAHelper.h"
-#import "NSWindow+Tools.h"
+#import "NSAlert+DigitalOust.h"
 
 @implementation SYStepPatch0
 
-- (NSString *)state
+- (NSString *)statusString
 {
     NSArray *modelIDs = [SYIOKitHelper listAudioModelIDs];
     if([modelIDs count] == 0) return @"empty";
@@ -26,10 +26,14 @@
 
 - (NSString *)titleText
 {
-    if ([[self state] isEqualToString:@"supported"])        return @"Sound card: seems fully supported";
-    if ([[self state] isEqualToString:@"not supported"])    return @"Sound card: not supported";
-    if ([[self state] isEqualToString:@"empty"])            return @"No sound card detected, driver may not be loaded";
-    if ([[self state] isEqualToString:@"multiple"])         return @"Multiple sound cards detected, unplug any external screen or audio device";
+    if ([[self statusString] isEqualToString:@"supported"])
+        return @"Sound card: seems fully supported";
+    if ([[self statusString] isEqualToString:@"not supported"])
+        return @"Sound card: not supported";
+    if ([[self statusString] isEqualToString:@"empty"])
+        return @"No sound card detected, driver may not be loaded";
+    if ([[self statusString] isEqualToString:@"multiple"])
+        return @"Multiple sound cards detected, unplug any external screen or audio device";
     return nil;
 }
 
@@ -45,10 +49,10 @@
 
 - (SYStepImage)image
 {
-    if ([[self state] isEqualToString:@"supported"])        return SYStepImageOK;
-    if ([[self state] isEqualToString:@"not supported"])    return SYStepImageNotOK;
-    if ([[self state] isEqualToString:@"empty"])            return SYStepImageNotOK;
-    if ([[self state] isEqualToString:@"multiple"])         return SYStepImageNotOK;
+    if ([[self statusString] isEqualToString:@"supported"])        return SYStepImageOK;
+    if ([[self statusString] isEqualToString:@"not supported"])    return SYStepImageNotOK;
+    if ([[self statusString] isEqualToString:@"empty"])            return SYStepImageNotOK;
+    if ([[self statusString] isEqualToString:@"multiple"])         return SYStepImageNotOK;
     return SYStepImageNotOK;
 }
 
@@ -57,7 +61,7 @@
     return NO;
 }
 
-- (void)buttonTap:(NSWindow *)window
+- (void)buttonTap:(NSView *)sender
 {
     NSArray *modelIDs = [SYIOKitHelper listAudioModelIDs];
     NSString *details;
@@ -73,7 +77,10 @@
         [SYAppleHDAHelper layoutIDSeemsSupported:layoutID useBackupFileIfPresent:YES details:&details];
     }
     
-    [window displayAlertWithTitle:@"Supported sound card detection" informativeText:details block:^(NSUInteger tappedIndex) {
+    [NSAlert displayAlertWithTitle:@"Supported sound card detection"
+                   informativeText:details
+                    onWindowOrView:sender
+                             block:^(NSUInteger tappedIndex) {
         if (self.updatedBlock)
             self.updatedBlock();
     }];

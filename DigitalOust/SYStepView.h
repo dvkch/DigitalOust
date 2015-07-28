@@ -15,4 +15,7 @@
 @property (nonatomic, assign) BOOL      buttonEnabled;
 @property (nonatomic, strong) SYStep    *step;
 
+- (void)startUpdate;
+- (void)stopUpdate;
+
 @end
