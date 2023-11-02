@@ -1,4 +1,6 @@
-# <img src="DigitalOust/Images.xcassets/AppIcon.appiconset/icon_64.png" width=24> DigitalOust
+<img src="Resources/README-AppIcon.png" width=64 />
+
+# DigitalOust
 
 This is gonna be a short README, I'm writing it years after creating this (unfinished) project.
 
